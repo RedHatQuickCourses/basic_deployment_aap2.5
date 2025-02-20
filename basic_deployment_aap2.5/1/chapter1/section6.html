@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Introduction to Deployment: :: Basic Deployment of Ansible Automation platfornm 2.5</title>
-    <link rel="prev" href="../LABENV/index.html">
-    <link rel="next" href="section1.html">
+    <title>Operator Installation :: Basic Deployment of Ansible Automation platfornm 2.5</title>
+    <link rel="prev" href="section5.html">
+    <link rel="next" href="section7.html">
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
@@ -53,7 +53,7 @@
   </li>
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="index.html">Introduction to Deployment:</a>
 <ul class="nav-list">
@@ -72,7 +72,7 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="section5.html">Containerized Installation LAB</a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="section6.html">Operator Installation</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -119,6 +119,7 @@
   <ul>
     <li><a href="../index.html">Basic Deployment of Ansible Automation platfornm 2.5</a></li>
     <li><a href="index.html">Introduction to Deployment:</a></li>
+    <li><a href="section6.html">Operator Installation</a></li>
   </ul>
 </nav>
 </div>
@@ -127,21 +128,80 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Introduction to Deployment:</h1>
+<h1 class="page">Operator Installation</h1>
 <div class="paragraph">
-<p>Simplifying and scaling IT automation across various infrastructures is the goal of the robust, enterprise-grade Ansible Automation Platform (AAP). AAP streamlines processes like maintaining containerized environments, coordinating multi-cloud deployments, and guaranteeing uniformity across on-premise systems by centralizing the administration of automation workflows. A web-based interface, role-based access control for safe operations, and analytics to track automation performance are some of its strong points. In the current IT environment, implementing AAP is essential to helping your company expedite procedures, lower errors, and enhance operational efficiency.</p>
+<p>The Ansible Automation Platform Operator provides cloud-native, push-button deployment of new Ansible Automation Platform instances in your OpenShift environment. The Ansible Automation Platform Operator includes resource types to deploy and manage instances of automation controller and private automation hub. It also includes automation controller job resources for defining and launching jobs inside your automation controller deployments.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Note: You can deploy multiple isolated instances of Ansible Automation Platform into the same Red Hat OpenShift Container Platform cluster by using a namespace-scoped deployment model. This approach allows you to use the same cluster for several deployments.</pre>
+</div>
 </div>
 <div class="paragraph">
-<p>A pictorial demostration shows the ways Ansible automation can be deployed:</p>
+<p>There are two deployment Topologies in this:</p>
 </div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Operator growth Topology</strong>: The growth topology is intended for organizations that are getting started with Ansible Automation Platform and do not require redundancy or higher compute for large volumes of automation. This topology allows for smaller footprint deployments.</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/1.png" alt="1">
+<img src="_images/6.1.png" alt="6.1">
 </div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>A Single Node OpenShift (SNO) cluster has been tested with the following requirements: 32 GB RAM, 16 CPUs, 128 GB local disk, and 3000 IOPS.</p>
+</div>
+<div class="paragraph">
+<p>The benefits of using this topology is:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Limited redundancy.</p>
+</li>
+<li>
+<p>Lower upfront resource requirements (fewer nodes, shared components).</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Operator enterprise Topology</strong> : The enterprise topology is intended for organizations that require Ansible Automation Platform to be deployed with redundancy or higher compute for large volumes of automation.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/6.2.png" alt="6.2">
+</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The above infrastructure topology describes an OpenShift Cluster with 3 primary nodes and 2 worker nodes where each OpenShift Worker node has been tested with the following component requirements: 16 GB RAM, 4 CPUs, 128 GB local disk, and 3000 IOPS.</p>
+</div>
+<div class="paragraph">
+<p>The benefits of using this topology method:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Designed for large-scale operations with High availability and fault tolerance.</p>
+</li>
+<li>
+<p>Optimized for enterprise environments with strict SLAs.</p>
+</li>
+<li>
+<p>Multiple instances for each component: Automation Hub, Controller, etc.</p>
+</li>
+</ul>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../LABENV/index.html">Lab Environment</a></span>
-  <span class="next"><a href="section1.html">Components of AAP</a></span>
+  <span class="prev"><a href="section5.html">Containerized Installation LAB</a></span>
+  <span class="next"><a href="section7.html">section7.adoc</a></span>
 </nav>
 </article>
   </div>
