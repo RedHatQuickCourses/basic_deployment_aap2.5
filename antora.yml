@@ -1,5 +1,5 @@
 name: basic_deployment_aap2.5
-title: FIXME Course Title
+title: Basic Deployment of Ansible Automation platfornm 2.5
 version: 1
 nav:
 - modules/ROOT/nav.adoc

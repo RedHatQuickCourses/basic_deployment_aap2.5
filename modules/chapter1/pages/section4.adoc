@@ -1,0 +1,47 @@
+= Containerized Installation
+
+*Inventory file* : Inventory files allow you to manage the Ansible Automation Platform installation. Inventory files specify variables for components, hosts and containers created and used, and additional information required for customizing the installation.
+
+We can create an inventory file or use the inventory file provided inside the tar file provided by the Red Hat Installer of containerized Ansible Automation Platform. 
+
+Inside the Installer folder you will have 2 different Inventory file that can be used for installation for different purposes. 
+
+. The default one named *inventory* is for the enterprise topology pattern. 	
+. If you want to deploy the growth or all-in-one pattern you need to copy over or use the *inventory-growth* file instead. 	
+
+In Container There are 2 types of Deployment Topology that can be used: 
+
+. *Enterprise topology pattern*: This means that all the components will be installed on different systems for better performance and stability. The Design of the architecture looks like the below where each component is installed on different servers and the drawn lines shows how the components are interacting with each other and on which port the communication is happening. 
++
+image::4.1.png[]
+
+*Enterprise topology* is appropriate for infrastructure that needs: 
+
+- lightweight deployment, smaller footprints.
+- Suitable for scaling or adding mesh.
+- Designed for deployment with redundancy/HA or higher computing for big volumes of automation.
+
+The benefits of using this topology: 
+
+- Protected from the underlying OS changes and system dependencies. 
+- Isolated from other applications and are more secured.
+- Simplified upgrades
+
+. *All-in-one pattern*: In this we will be installing all the components in a single system to create a testing environment or POC to understand the working. In this we are going to do *All-in-one* pattern deployment 
++
+image::4.2.png[]
+
+The above will be deployed on a single system itself where 8433 will be the port for the Platform gateway to be accessed. 
+
+*All-in-one pattern* is suitable for infrastructure according to the below needs: 
+
+- Intended for organizations that are getting started with Ansible Automation Platform.
+- All-in-one deployment on a single system reduces infrastructure cost. 
+- Not ideal for scaling or adding mesh.
+- Suitable for small test environments.
+
+The benefits of using this topology: 
+
+- Protected from the underlying OS changes and system dependencies. 
+- Easy to Deploy and manage. 
+

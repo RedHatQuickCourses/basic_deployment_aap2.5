@@ -1,5 +1,5 @@
 site:
-  title: FIXME Course Title
+  title: Basic Deployment of Ansible Automation platfornm 2.5
   start_page: basic_deployment_aap2.5::index.adoc
 
 content:

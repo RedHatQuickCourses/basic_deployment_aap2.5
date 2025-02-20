@@ -1,7 +1,8 @@
-= Chapter 1
+= Introduction to Deployment: 
 
-In this section, we cover... FIXME
+Simplifying and scaling IT automation across various infrastructures is the goal of the robust, enterprise-grade Ansible Automation Platform (AAP). AAP streamlines processes like maintaining containerized environments, coordinating multi-cloud deployments, and guaranteeing uniformity across on-premise systems by centralizing the administration of automation workflows. A web-based interface, role-based access control for safe operations, and analytics to track automation performance are some of its strong points. In the current IT environment, implementing AAP is essential to helping your company expedite procedures, lower errors, and enhance operational efficiency.
 
+A pictorial demostration shows the ways Ansible automation can be deployed: 
 
-- Add or remove section entries in the `antora.yaml` file as needed.
-- Ensure you create or delete the corresponding directory for the chapter accordingly.
+image::1.png[]
+
