@@ -1,40 +1,40 @@
 = Containerized Installation LAB 
 
-- We are going to follow an All-in-one pattern approach for this setup. 
+. We are going to follow an All-in-one pattern approach for this setup. 
 +
 image::5.1.png[]
 
-- Once the lab is deployed and you are accessing the system via *ssh* terminal make sure to run everything as a normal user only and use sudo command to perform any root level operations. 
+. Once the lab is deployed and you are accessing the system via *ssh* terminal make sure to run everything as a normal user only and use sudo command to perform any root level operations. 
 
-- Install the required and useful utilities:
+. Install the required and useful utilities:
 +
 [source,bash,role=execute]
 ----
  # dnf install -y wget git-core rsync vim ansible-core
 ----
 
-- Download the installer of the: 
+. Download the installer of the: 
 + 
 [source,bash,role=execute]
 ---- 
-# wget -O aap.tar.gz https://access.cdn.redhat.com/content/origin/files/sha256/48/48334cd93a9dffc0ecad2c390b8ff069d58a3c395e82ca38dce38650d44b4e61/ansible-automation-platform-containerized-setup-bundle-2.5-10-x86_64.tar.gz?user=7cb7822b5d4e0b0ac4dcef951c009ca1&_auth_=1740392504_e7f9c39b81994414a8929694da77885e
+# wget -O aap.tar.gz https://access.cdn.redhat.com/content/origin/files/sha256/48/48334cd93a9dffc0ecad2c390b8ff069d58a3c395e82ca38dce38650d44b4e61/ansible-automation-platform-containerized-setup-bundle-2.5-10-x86_64.tar.gz?
 ----
 
-- Extract the *aap.tar.gz* file using the following command:
+. Extract the *aap.tar.gz* file using the following command:
 + 
 [source,bash,role=execute]
 ---- 
 tar -xvf aap.tar.gz
 ----
 
-- Get the hostname from the system and copy it.
+. Get the hostname from the system and copy it.
 + 
 [source,bash,role=execute]
 ---- 
 hostname
 ----
 
-- Enter the extracted folder and Open the inventory-growth file using the *vim* command and change the below 
+. Enter the extracted folder and Open the inventory-growth file using the *vim* command and change the below 
 + 
 [source,bash,role=execute]
 ---- 
@@ -44,13 +44,13 @@ aap.example.org → <system hostname>
 <set your own> ← this value can be customized as per your need but remember to use the same while doing the login after the deployment. 
 ----
 
-- Once the inventory file is ready follow the below steps to do the installation: 
+. Once the inventory file is ready follow the below steps to do the installation: 
 + 
 [source,bash,role=execute]
 ---- 
 ansible-playbook -i inventory-growth ansible.containerized_installer.install
 ---- 
 
-- Simply use the hostname from the lab deployment login page and try to access the URL with the browser on the port *443* 
+. Simply use the hostname from the lab deployment login page and try to access the URL with the browser on the port *443* 
 
 
