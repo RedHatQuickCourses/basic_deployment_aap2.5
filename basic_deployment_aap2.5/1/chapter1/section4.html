@@ -76,7 +76,10 @@
     <a class="nav-link" href="section6.html">Operator Installation</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="section7.html">section7.adoc</a>
+    <a class="nav-link" href="section7.html">Operator Deployment LAB</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section8.html">Summary</a>
   </li>
 </ul>
   </li>
@@ -147,6 +150,30 @@
 <p>If you want to deploy the growth or all-in-one pattern you need to copy over or use the <strong>inventory-growth</strong> file instead.</p>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<p>Both standalone and cluster systems are quite easy to setup. If there is only one hostname listed under the component name, it is a standalone configuration; if there are several hostnames listed under the single group name, it is a cluster setup. All you need to do is add the systems under the group name of the component you wish to install.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">For eg:
+[automationgateway] ← this is a automationgateway group / component that will get installed
+aap.example.org</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The above will be a standalone set up. Once the installation script will run it will automatically take care of that.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">For cluster eg:
+[automationgateway]
+aap1.example.org
+aap2.example.org</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The above is a cluster setup and there is no need to explicitly tell it to the script as it will take care of it automatically. And this behavior is the same for different components apart from the database.</p>
 </div>
 <div class="paragraph">
 <p>In Container There are 2 types of Deployment Topology that can be used:</p>
