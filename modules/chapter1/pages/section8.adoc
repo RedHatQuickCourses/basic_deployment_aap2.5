@@ -3,4 +3,4 @@
 - Understanding the components of Ansible Autoamtion Platform.
 - Getting information about the installation topologies/methods.
 - How to evaluate correct deployment according to the Infrastructure.
-- Network ports and protocol that help in the communication of AAP. 
+- Network ports and protocols that help in the communication of AAP. 

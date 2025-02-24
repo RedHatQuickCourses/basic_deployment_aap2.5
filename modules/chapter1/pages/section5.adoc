@@ -4,7 +4,7 @@
 +
 image::5.1.png[]
 
-. Once the lab is deployed and you are accessing the system via *ssh* terminal make sure to run everything as a normal user only and use sudo command to perform any root level operations. 
+. Once the lab is deployed and you are accessing the system via *ssh* terminal make sure to run everything as a normal user only and use the sudo command to perform any root-level operations. 
 
 . Install the required and useful utilities:
 +
@@ -41,7 +41,7 @@ hostname
 aap.example.org → <system hostname>
 <set your own> → redhat
 
-<set your own> ← this value can be customized as per your need but remember to use the same while doing the login after the deployment. 
+<set your own> ← This value can be customized as per your need but remember to use the same while doing the login after the deployment. 
 ----
 
 . Once the inventory file is ready follow the below steps to do the installation: 
@@ -51,6 +51,6 @@ aap.example.org → <system hostname>
 ansible-playbook -i inventory-growth ansible.containerized_installer.install
 ---- 
 
-. Simply use the hostname from the lab deployment login page and try to access the URL with the browser on the port *443* 
+. Simply use the hostname from the lab deployment login page and try to access the URL with the browser on the port *443*.
 
 
