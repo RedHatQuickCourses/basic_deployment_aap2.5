@@ -55,16 +55,16 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="index.html">Introduction to Deployment:</a>
+    <a class="nav-link" href="index.html">Introduction to Deployment</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="section1.html">Components of AAP</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="section2.html">On premise Installation:</a>
+    <a class="nav-link" href="section2.html">On-premise Installation:</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="section3.html">Understand the Network and protocols</a>
+    <a class="nav-link" href="section3.html">Understand the Network and Protocols</a>
   </li>
   <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="section4.html">Containerized Installation</a>
@@ -121,7 +121,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Basic Deployment of Ansible Automation platfornm 2.5</a></li>
-    <li><a href="index.html">Introduction to Deployment:</a></li>
+    <li><a href="index.html">Introduction to Deployment</a></li>
     <li><a href="section4.html">Containerized Installation</a></li>
   </ul>
 </nav>
@@ -133,13 +133,13 @@
 <article class="doc">
 <h1 class="page">Containerized Installation</h1>
 <div class="paragraph">
-<p><strong>Inventory file</strong> : Inventory files allow you to manage the Ansible Automation Platform installation. Inventory files specify variables for components, hosts and containers created and used, and additional information required for customizing the installation.</p>
+<p><strong>Inventory file</strong>: Inventory files allow you to manage the Ansible Automation Platform installation. Inventory files specify variables for components, hosts, and containers created and used, and additional information required for customizing the installation.</p>
 </div>
 <div class="paragraph">
 <p>We can create an inventory file or use the inventory file provided inside the tar file provided by the Red Hat Installer of containerized Ansible Automation Platform.</p>
 </div>
 <div class="paragraph">
-<p>Inside the Installer folder you will have 2 different Inventory file that can be used for installation for different purposes.</p>
+<p>Inside the Installer folder, you will have 2 different Inventory files that can be used for installation for different purposes.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -152,17 +152,17 @@
 </ol>
 </div>
 <div class="paragraph">
-<p>Both standalone and cluster systems are quite easy to setup. If there is only one hostname listed under the component name, it is a standalone configuration; if there are several hostnames listed under the single group name, it is a cluster setup. All you need to do is add the systems under the group name of the component you wish to install.</p>
+<p>Both standalone and cluster systems are quite easy to set up. If there is only one hostname listed under the component name, it is a standalone configuration; if there are several hostnames listed under the single group name, it is a cluster setup. All you need to do is add the systems under the group name of the component you wish to install.</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">For eg:
-[automationgateway] ← this is a automationgateway group / component that will get installed
+[automationgateway] ← This is a automationgateway group / component that will get installed
 aap.example.org</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The above will be a standalone set up. Once the installation script will run it will automatically take care of that.</p>
+<p>The above will be a standalone setup. Once the installation script will run it will automatically take care of that.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -173,7 +173,7 @@ aap2.example.org</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The above is a cluster setup and there is no need to explicitly tell it to the script as it will take care of it automatically. And this behavior is the same for different components apart from the database.</p>
+<p>The above is a cluster setup and there is no need to explicitly tell it to the script as it will take care of it automatically. This behavior is the same for different components apart from the database.</p>
 </div>
 <div class="paragraph">
 <p>In Container There are 2 types of Deployment Topology that can be used:</p>
@@ -181,7 +181,7 @@ aap2.example.org</code></pre>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><strong>Enterprise topology pattern</strong>: This means that all the components will be installed on different systems for better performance and stability. The Design of the architecture looks like the below where each component is installed on different servers and the drawn lines shows how the components are interacting with each other and on which port the communication is happening.</p>
+<p><strong>Enterprise topology pattern</strong>: This means that all the components will be installed on different systems for better performance and stability. The Design of the architecture looks like the one below where each component is installed on different servers and the drawn lines show how the components are interacting with each other and on which port the communication is happening.</p>
 <div class="imageblock">
 <div class="content">
 <img src="_images/4.1.png" alt="4.1">
@@ -196,7 +196,7 @@ aap2.example.org</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p>lightweight deployment, smaller footprints.</p>
+<p>Lightweight deployment, smaller footprints.</p>
 </li>
 <li>
 <p>Suitable for scaling or adding mesh.</p>
@@ -215,14 +215,14 @@ aap2.example.org</code></pre>
 <p>Protected from the underlying OS changes and system dependencies.</p>
 </li>
 <li>
-<p>Isolated from other applications and are more secured.</p>
+<p>Isolated from other applications and are more secure.</p>
 </li>
 <li>
 <p>Simplified upgrades</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><strong>All-in-one pattern</strong>: In this we will be installing all the components in a single system to create a testing environment or POC to understand the working. In this we are going to do <strong>All-in-one</strong> pattern deployment</p>
+<p><strong>All-in-one pattern</strong>: In this, we will be installing all the components in a single system to create a testing environment or POC to understand the working. In this, we are going to do <strong>All-in-one</strong> pattern deployment.</p>
 <div class="imageblock">
 <div class="content">
 <img src="_images/4.2.png" alt="4.2">
@@ -246,7 +246,7 @@ aap2.example.org</code></pre>
 <p>Intended for organizations that are getting started with Ansible Automation Platform.</p>
 </li>
 <li>
-<p>All-in-one deployment on a single system reduces infrastructure cost.</p>
+<p>All-in-one deployment on a single system reduces infrastructure costs.</p>
 </li>
 <li>
 <p>Not ideal for scaling or adding mesh.</p>
@@ -270,7 +270,7 @@ aap2.example.org</code></pre>
 </ul>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="section3.html">Understand the Network and protocols</a></span>
+  <span class="prev"><a href="section3.html">Understand the Network and Protocols</a></span>
   <span class="next"><a href="section5.html">Containerized Installation LAB</a></span>
 </nav>
 </article>
