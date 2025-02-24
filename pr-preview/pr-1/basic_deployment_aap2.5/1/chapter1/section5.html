@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Containerized Installation LAB :: Basic Deployment of Ansible Automation platfornm 2.5</title>
+    <link rel="prev" href="section4.html">
+    <link rel="next" href="section6.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../../..">Basic Deployment of Ansible Automation platfornm 2.5</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/RedHatQuickCourses/basic_deployment_aap2.5/issues" target="_blank">Report Issues</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="basic_deployment_aap2.5" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Basic Deployment of Ansible Automation platfornm 2.5</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../LABENV/index.html">Lab Environment</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Introduction to Deployment</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section1.html">Components of AAP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section2.html">On-premise Installation:</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section3.html">Understand the Network and Protocols</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section4.html">Containerized Installation</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="section5.html">Containerized Installation LAB</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section6.html">Operator Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section7.html">Operator Deployment LAB</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section8.html">Summary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../appendix/appendix.html">Appendix</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Basic Deployment of Ansible Automation platfornm 2.5</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Basic Deployment of Ansible Automation platfornm 2.5</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Basic Deployment of Ansible Automation platfornm 2.5</a></li>
+    <li><a href="index.html">Introduction to Deployment</a></li>
+    <li><a href="section5.html">Containerized Installation LAB</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Containerized Installation LAB</h1>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>We are going to follow an All-in-one pattern approach for this setup.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/5.1.png" alt="5.1">
+</div>
+</div>
+</li>
+<li>
+<p>Once the lab is deployed and you are accessing the system via <strong>ssh</strong> terminal make sure to run everything as a normal user only and use the sudo command to perform any root-level operations.</p>
+</li>
+<li>
+<p>Install the required and useful utilities:</p>
+<div class="listingblock execute">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"> # dnf install -y wget git-core rsync vim ansible-core</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Download the installer of the:</p>
+<div class="listingblock execute">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"># wget -O aap.tar.gz https://access.cdn.redhat.com/content/origin/files/sha256/48/48334cd93a9dffc0ecad2c390b8ff069d58a3c395e82ca38dce38650d44b4e61/ansible-automation-platform-containerized-setup-bundle-2.5-10-x86_64.tar.gz?</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Extract the <strong>aap.tar.gz</strong> file using the following command:</p>
+<div class="listingblock execute">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">tar -xvf aap.tar.gz</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get the hostname from the system and copy it.</p>
+<div class="listingblock execute">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">hostname</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Enter the extracted folder and Open the inventory-growth file using the <strong>vim</strong> command and change the below</p>
+<div class="listingblock execute">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">aap.example.org → &lt;system hostname&gt;
+&lt;set your own&gt; → redhat
+
+&lt;set your own&gt; ← This value can be customized as per your need but remember to use the same while doing the login after the deployment.</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Once the inventory file is ready follow the below steps to do the installation:</p>
+<div class="listingblock execute">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ansible-playbook -i inventory-growth ansible.containerized_installer.install</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Simply use the hostname from the lab deployment login page and try to access the URL with the browser on the port <strong>443</strong>.</p>
+</li>
+</ol>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="section4.html">Containerized Installation</a></span>
+  <span class="next"><a href="section6.html">Operator Installation</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img src="../../../_/img/rhl-logo-red.png" height="40px" alt="Red Hat"  href="https://redhat.com" >
+</footer><script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
