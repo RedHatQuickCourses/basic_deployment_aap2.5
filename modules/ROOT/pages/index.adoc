@@ -1,4 +1,4 @@
-= Basic Deployment of Ansible Automation platfornm 2.5
+= Basic Deployment of Ansible Automation Platform 2.5
 :navtitle: Home
 
 == Introduction
@@ -21,4 +21,4 @@ On completing this course, you should be able to:
 
 This course assumes that you have the following prior experience:
 
-- Foundational knowledge of Containers, Ansible and Openshift. 
+- Foundational knowledge of Containers, Ansible, and Openshift. 

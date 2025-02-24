@@ -1,9 +1,9 @@
-= Understand the Network and protocols
+= Understand the Network and Protocols
 
 Red Hat Ansible Automation Platform uses several ports to communicate with its services. These ports must be open and available for bidirectional traffic between the Red Hat Ansible Automation Platform server in order for it to work. Ensure that these ports are available and are not blocked by the server firewall.
 
 
-.Here is list of port and protocal with service name:
+.Here is a list of ports and protocols with service name:
 [format="csv", options="header"]
 |===
 PORT,PROTOCOL,Service,Component 
@@ -18,6 +18,6 @@ PORT,PROTOCOL,Service,Component
 16379,TCP,Redis,Cluster Redis for resilient configuration 
 |===
 
-Note: The above are default destination ports and installer inventory listed are configurable. If you choose to configure them to suit your environment, you might experience a change in behavior. 			 
+Note: The above are default destination ports and the installer inventory listed is configurable. If you choose to configure them to suit your environment, you might experience a change in behavior. 			 
 
-For more information on Variables that can be used to change the port refer to the https://docs.redhat.com/en/documentation/red_hat_ansible_automation_platform/2.5/html-single/planning_your_installation/index#system_requirements_for_rpm_installation[Planning your installation of Ansible Automation Platform, windows=_blank]
+For more information on Variables that can be used to change the port refer to the https://docs.redhat.com/en/documentation/red_hat_ansible_automation_platform/2.5/html-single/planning_your_installation/index#system_requirements_for_rpm_installation[Planning your installation of Ansible Automation Platform., windows=_blank]
