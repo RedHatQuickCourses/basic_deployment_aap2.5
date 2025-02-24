@@ -9,6 +9,23 @@ Inside the Installer folder you will have 2 different Inventory file that can be
 . The default one named *inventory* is for the enterprise topology pattern. 	
 . If you want to deploy the growth or all-in-one pattern you need to copy over or use the *inventory-growth* file instead. 	
 
+Both standalone and cluster systems are quite easy to setup. If there is only one hostname listed under the component name, it is a standalone configuration; if there are several hostnames listed under the single group name, it is a cluster setup. All you need to do is add the systems under the group name of the component you wish to install.
+
+[source,bash]
+For eg: 
+[automationgateway] ← this is a automationgateway group / component that will get installed 
+aap.example.org
+
+The above will be a standalone set up. Once the installation script will run it will automatically take care of that. 
+
+[source,bash]
+For cluster eg:
+[automationgateway]
+aap1.example.org
+aap2.example.org
+
+The above is a cluster setup and there is no need to explicitly tell it to the script as it will take care of it automatically. And this behavior is the same for different components apart from the database. 
+
 In Container There are 2 types of Deployment Topology that can be used: 
 
 . *Enterprise topology pattern*: This means that all the components will be installed on different systems for better performance and stability. The Design of the architecture looks like the below where each component is installed on different servers and the drawn lines shows how the components are interacting with each other and on which port the communication is happening. 

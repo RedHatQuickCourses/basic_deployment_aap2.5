@@ -1,0 +1,13 @@
+= Operator Deployment LAB
+
+The following video will provide the step-to-step guide to install the Ansible Automation Platform 2.5 operator:
+
+video::aap_deploy.mp4[align="center",width=700,height=400]
+
+. Log in to Red Hat OpenShift Container Platform.
+. Navigate to Operators OperatorHub.
+. Search for Ansible Automation Platform and click *Install*.
+. Select an *stable-2.5*.
+. Select namespace as default which will be *aap*.
+. Click *Install*.
+
