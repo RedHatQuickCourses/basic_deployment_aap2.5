@@ -61,7 +61,7 @@
     <a class="nav-link" href="section1.html">Components of AAP</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="section2.html">On-premise Installation:</a>
+    <a class="nav-link" href="section2.html">On-premise Installation</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="section3.html">Understand the Network and Protocols</a>
@@ -132,10 +132,23 @@
 </aside>
 <article class="doc">
 <h1 class="page">Containerized Installation LAB</h1>
+<div class="paragraph">
+<p>The below video demonstrate the step to step guide to do the installtion of all components on a single system itslef:</p>
+</div>
+<div class="videoblock text-left">
+<div class="content">
+<video src="_images/container_aap_lab.mp4" width="800" height="500" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+<div class="paragraph">
+<p>all the above steps followed in the video are shared below:</p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>We are going to follow an All-in-one pattern approach for this setup.</p>
+<p>We are going to follow an All-in-one pattern approach for the setup.</p>
 <div class="imageblock">
 <div class="content">
 <img src="_images/5.1.png" alt="5.1">
@@ -149,15 +162,18 @@
 <p>Install the required and useful utilities:</p>
 <div class="listingblock execute">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"> # dnf install -y wget git-core rsync vim ansible-core</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"> $ sudo dnf install -y wget git-core rsync vim ansible-core</code></pre>
 </div>
 </div>
 </li>
 <li>
-<p>Download the installer of the:</p>
+<p>Go to the link and get the installer link:  <a href="https://access.redhat.com/downloads/content/480/ver=2.5/rhel---9/2.5/x86_64/product-software">Containerized Ansible Automation Platform</a></p>
+</li>
+<li>
+<p>Download the installer file:</p>
 <div class="listingblock execute">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"># wget -O aap.tar.gz https://access.cdn.redhat.com/content/origin/files/sha256/48/48334cd93a9dffc0ecad2c390b8ff069d58a3c395e82ca38dce38650d44b4e61/ansible-automation-platform-containerized-setup-bundle-2.5-10-x86_64.tar.gz?</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ wget -O aap.tar.gz "&lt;paste-link-here taken from step 4&gt;"</code></pre>
 </div>
 </div>
 </li>
@@ -165,7 +181,7 @@
 <p>Extract the <strong>aap.tar.gz</strong> file using the following command:</p>
 <div class="listingblock execute">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">tar -xvf aap.tar.gz</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ tar -xvf aap.tar.gz</code></pre>
 </div>
 </div>
 </li>
@@ -173,15 +189,15 @@
 <p>Get the hostname from the system and copy it.</p>
 <div class="listingblock execute">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">hostname</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ hostname</code></pre>
 </div>
 </div>
 </li>
 <li>
-<p>Enter the extracted folder and Open the inventory-growth file using the <strong>vim</strong> command and change the below</p>
+<p>Enter the extracted folder and Open the <strong>inventory-growth</strong> file using the <strong>vim</strong> command and change the below</p>
 <div class="listingblock execute">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">aap.example.org → &lt;system hostname&gt;
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">aap.example.org → &lt; paste system hostname&gt;
 &lt;set your own&gt; → redhat
 
 &lt;set your own&gt; ← This value can be customized as per your need but remember to use the same while doing the login after the deployment.</code></pre>
@@ -192,12 +208,23 @@
 <p>Once the inventory file is ready follow the below steps to do the installation:</p>
 <div class="listingblock execute">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ansible-playbook -i inventory-growth ansible.containerized_installer.install</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ ansible-playbook -i inventory-growth ansible.containerized_installer.install</code></pre>
 </div>
 </div>
 </li>
 <li>
-<p>Simply use the hostname from the lab deployment login page and try to access the URL with the browser on the port <strong>443</strong>.</p>
+<p>Simply use the hostname from the lab deployment login page and try to access the URL from the browser on the port <strong>443</strong>.</p>
+</li>
+<li>
+<p>Use the user <strong>admin</strong> and the <strong>password</strong> set during the time of installation. In the above video i set it to <strong>redhat</strong>.</p>
+<div class="literalblock">
+<div class="content">
+<pre>Note: Try to use stronger password while doing the enterprise deployment</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Provide the <strong>Red Hat login ID</strong> to get the subscription for attaching it to the AAP and <strong>60-day subscription to Red Hat Ansible® Automation Platform</strong> or <strong>Red Hat Developer Subscription for Individuals</strong> subscription can be used for this lab.</p>
 </li>
 </ol>
 </div>
