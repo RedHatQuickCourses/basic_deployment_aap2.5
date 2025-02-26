@@ -1,4 +1,4 @@
-= On-premise Installation: 
+= On-premise Installation 
 
 There are 3 different ways by which you can do the installation to your local infrastructure i.e. Rpm, Containerized, and Operator. In this, we are going to learn about the Future of Deployment method which is known as Containerized installation. The RPM installation is more or less the same and as the RPM will be getting deprecated in the future our focus will be on understanding the other 2 Containerized and Operator-based deployment. 
 
@@ -11,4 +11,4 @@ RPM: The https://docs.redhat.com/en/documentation/red_hat_ansible_automation_pla
 
 Containerized: The https://docs.redhat.com/en/documentation/red_hat_ansible_automation_platform/2.5/html/containerized_installation/aap-containerized-installation#system_requirements[System requirements, window=_blank ] section of Containerized installation. 			
 
-For https://docs.redhat.com/en/documentation/red_hat_ansible_automation_platform/2.5/html/tested_deployment_models/ocp-topologies#tested_system_configurations_6[system requirements, window=_blank ] for installing Ansible Automation Platform on OpenShift Container Platform, see the Tested system configurations section of Tested deployment models. 
+For https://docs.redhat.com/en/documentation/red_hat_ansible_automation_platform/2.5/html/tested_deployment_models/ocp-topologies#tested_system_configurations_6[System requirements, window=_blank ] for installing Ansible Automation Platform on OpenShift Container Platform, see the Tested system configurations section of Tested deployment models. 
