@@ -12,3 +12,20 @@ RPM: The https://docs.redhat.com/en/documentation/red_hat_ansible_automation_pla
 Containerized: The https://docs.redhat.com/en/documentation/red_hat_ansible_automation_platform/2.5/html/containerized_installation/aap-containerized-installation#system_requirements[System requirements, window=_blank ] section of Containerized installation. 			
 
 For https://docs.redhat.com/en/documentation/red_hat_ansible_automation_platform/2.5/html/tested_deployment_models/ocp-topologies#tested_system_configurations_6[System requirements, window=_blank ] for installing Ansible Automation Platform on OpenShift Container Platform, see the Tested system configurations section of Tested deployment models. 
+
+image::2.1.png[]
+
+.Here are the Tested topologies:
+[format="csv", options="header"]
+|===
+Mode, Infrastructure, Description , Tested topologies
+RPM, Virtual machines and bare metal, The RPM installer deploys Ansible Automation Platform on Red Hat Enterprise Linux by using RPMs to install the platform on host machines. Customers manage the product and infrastructure lifecycle., RPM growth topology/RPM mixed growth topology/RPM enterprise topology and RPM mixed enterprise topolog
+Containers,Virtual machines and bare metal,The containerized installer  eploys Ansible Automation Platform on Red Hat Enterprise Linux by using  podman which runs the platform in containers on host machines. Customers manage the product and infrastructure lifecycle, Container growth topology and Container enterprise topology
+Operator,Red Hat OpenShift,Operator Red Hat OpenShift The Operator uses Red Hat OpenShift Operators to deploy Ansible Automation Platform within Red Hat OpenShift. Customers manage the product and infrastructure lifecycle,Operator growth topology and Operator enterprise topology
+|===
+
+By following the tested deployment models recommended by Red Hat, organizations can ensure a smooth installation and deployment of the Ansible Automation Platform without the need for further actions, making all features and capabilities readily available for use.
+
+As the RPM deployment will be deprecated in future so this training will be more fouced on the other 2 deployment menthod i.e Containers and Operator. 
+
+Feel free to learn more about https://docs.redhat.com/en/documentation/red_hat_ansible_automation_platform/2.5/html/tested_deployment_models/rpm-topologies#rpm-a-env-a[RPM Tested topologies,window=_balnk].

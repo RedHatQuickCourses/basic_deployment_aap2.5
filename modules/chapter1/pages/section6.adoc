@@ -21,13 +21,13 @@ The benefits of using this topology are:
 . *Operator enterprise Topology*: The enterprise topology is intended for organizations that require Ansible Automation Platform to be deployed with redundancy or higher computing for large volumes of automation. 
 +
 image::6.2.png[]
-
++
 The above infrastructure topology describes an OpenShift Cluster with 3 primary nodes and 2 worker nodes where each OpenShift Worker node has been tested with the following component requirements: 16 GB RAM, 4 CPUs, 128 GB local disk, and 3000 IOPS. 
-
++
 The benefits of using this topology method: 
 
-- Designed for large-scale operations with High availability and fault tolerance.
-- Optimized for enterprise environments with strict SLAs.
-- Multiple instances for each component: Automation Hub, Controller, etc.
+.. Designed for large-scale operations with High availability and fault tolerance.
+.. Optimized for enterprise environments with strict SLAs.
+.. Multiple instances for each component: Automation Hub, Controller, etc.
 
 
