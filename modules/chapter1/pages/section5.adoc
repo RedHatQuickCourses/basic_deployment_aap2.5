@@ -1,5 +1,7 @@
 = Containerized Installation LAB 
 
+We will be using *Product Enablement Containerized AAP 2.5* LAB for this deployment: 
+
 The below video demonstrate the step to step guide to do the installtion of all components on a single system itslef: 
 
 video::container_aap_lab.mp4[align="left",width=800,height=500]

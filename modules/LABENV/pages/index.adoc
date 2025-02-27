@@ -3,16 +3,25 @@
 == Instructions to Launch Your Lab on the Red Hat Demo Platform (RHDP)
 
 . **Log in** to the xref:#RHDP-Portal-Links[RHDP portal]
-. **Search** for the catalog entry: **FIXME Lab Catalog Name**.
+. **Search** for the catalog entry: **Product Enablement Containerized AAP 2.5** for lab 1. 
++ 
+image::1.png[]
+
+. **Search** for the catalog entry: **Product Enablement AAP Operator Deployment lab** for lab 2.
++
+image::2.png[]
+
 . **Click** on the catalog entry in the search results.
 . On the catalog page, **click** the **Order** button.
 . **Fill out** the required details in the order form.
++ 
+image::form.png[]
 . **Review the warning** at the bottom of the form and **check the box** labeled: +
    *“I confirm that I understand the above warnings.”*
 . **Click** the **Order** button to place your lab order.
 
 === Important Notes:
-- This lab may take approximately **FIXME minutes** to become ready.
+- This lab may take approximately **10 minutes** to become ready for **Product Enablement Containerized AAP 2.5**  and **50 minutes** for **Product Enablement AAP Operator Deployment lab** .
 - You will receive an **email with access details** once your lab environment is ready.
 - You can also **retrieve lab access** directly from the RHDP portal.
 
@@ -22,6 +31,6 @@
 
 [[RHDP-Portal-Links]]
 === RHDP Portal Links
-- RedHat associates: https://demo.redhat.com/[https://demo.redhat.com/,window=_blank]
+- RedHat associates: Access to the labs https://catalog.demo.redhat.com/catalog?search=Product+Enablement+Containerized+AAP+2.5[Product Enablement Containerized AAP 2.5,window=_blank] and https://catalog.demo.redhat.com/catalog?search=Product+Enablement+AAP+Operator+Deployment+lab[Product Enablement AAP Operator Deployment lab,window=_balnk]
 - RedHat partners: https://partner.demo.redhat.com/[https://partner.demo.redhat.com/,window=_blank]
 

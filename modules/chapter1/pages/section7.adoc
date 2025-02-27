@@ -1,5 +1,7 @@
 = Operator Deployment LAB
 
+We will be using *Product Enablement AAP Operator Deployment lab* LAB for this deployment: 
+
 The following video will provide the step-by-step guide for installing the Ansible Automation Platform 2.5 operator:
 
 video::operator_aap.mp4[align="center",width=800,height=500]
