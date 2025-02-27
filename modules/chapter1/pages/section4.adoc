@@ -31,18 +31,18 @@ In Container There are 2 types of Deployment Topology that can be used:
 . *Enterprise topology pattern*: This means that all the components will be installed on different systems for better performance and stability. The Design of the architecture looks like the one below where each component is installed on different servers and the drawn lines show how the components are interacting with each other and on which port the communication is happening. 
 +
 image::4.1.png[]
-
++
 *Enterprise topology* is appropriate for infrastructure that needs: 
 
-- Lightweight deployment, smaller footprints.
-- Suitable for scaling or adding mesh.
-- Designed for deployment with redundancy/HA or higher computing for big volumes of automation.
-
+.. Lightweight deployment, smaller footprints.
+.. Suitable for scaling or adding mesh.
+.. Designed for deployment with redundancy/HA or higher computing for big volumes of automation.
++
 The benefits of using this topology: 
 
-- Protected from the underlying OS changes and system dependencies. 
-- Isolated from other applications and are more secure.
-- Simplified upgrades
+ .. Protected from the underlying OS changes and system dependencies. 
+ .. Isolated from other applications and are more secure.
+ .. Simplified upgrades
 
 . *All-in-one pattern*: In this, we will be installing all the components in a single system to create a testing environment or POC to understand the working. In this, we are going to do *All-in-one* pattern deployment.
 +

@@ -7,15 +7,15 @@ The Ansible Automation Platform Operator provides cloud-native, push-button depl
 There are two deployment Topologies in this: 
 
 . *Operator growth Topology*: The growth topology is intended for organizations that are getting started with Ansible Automation Platform and do not require redundancy or higher computing for large volumes of automation. This topology allows for smaller footprint deployments.
-+
++ 
 image::6.1.png[]
-
++
 A Single Node OpenShift (SNO) cluster has been tested with the following requirements: 32 GB RAM, 16 CPUs, 128 GB local disk, and 3000 IOPS. 				
-
++
 The benefits of using this topology are: 
-
-- Limited redundancy.
-- Lower upfront resource requirements (fewer nodes, shared components).
+ 
+ .. Limited redundancy.
+ .. Lower upfront resource requirements (fewer nodes, shared components).
 
 
 . *Operator enterprise Topology*: The enterprise topology is intended for organizations that require Ansible Automation Platform to be deployed with redundancy or higher computing for large volumes of automation. 
