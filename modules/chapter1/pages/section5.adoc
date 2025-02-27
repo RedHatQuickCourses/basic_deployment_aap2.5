@@ -66,4 +66,6 @@ $ ansible-playbook -i inventory-growth ansible.containerized_installer.install
 
  Note: Try to use stronger password while doing the enterprise deployment 
 
-. Provide the *Red Hat login ID* to get the subscription for attaching it to the AAP and *60-day subscription to Red Hat Ansible® Automation Platform* or *Red Hat Developer Subscription for Individuals* subscription can be used for this lab.  
+. Provide the *Red Hat login ID* to get the subscription for attaching it to the AAP and *60-day subscription to Red Hat Ansible® Automation Platform* or *Red Hat Developer Subscription for Individuals* subscription can be used for this lab.
+
+. After *Login* run the *Project sync* for the *Demo project* to confirm the job is getting executed.
