@@ -32,5 +32,5 @@ image::form.png[]
 [[RHDP-Portal-Links]]
 === RHDP Portal Links
 - RedHat associates: Access to the labs https://catalog.demo.redhat.com/catalog?search=Product+Enablement+Containerized+AAP+2.5[Product Enablement Containerized AAP 2.5,window=_blank] and https://catalog.demo.redhat.com/catalog?search=Product+Enablement+AAP+Operator+Deployment+lab[Product Enablement AAP Operator Deployment lab,window=_balnk]
-- RedHat partners: https://partner.demo.redhat.com/[https://partner.demo.redhat.com/,window=_blank]
+- RedHat partners: https://catalog.partner.demo.redhat.com/catalog?search=Product+Enablement+Containerized+AAP+2.5&item=babylon-catalog-prod%2Fpartner.containerized-aap-25.prod[Product Enablement Containerized AAP 2.5,window=_blank] and https://catalog.partner.demo.redhat.com/catalog?search=Product+Enablement+AAP+Operator+Deployment+lab[Product Enablement AAP Operator Deployment lab,window=_balnk]
 
