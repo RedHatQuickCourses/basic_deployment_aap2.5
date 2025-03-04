@@ -3,7 +3,7 @@
 
 == Introduction
 
-Red Hat® Ansible® Automation Platform offers a simple solution to deploying applications. It gives you the power to deploy multi-tier applications reliably and consistently, all from 1 common framework. You can configure key services as well as push application files from 1 common system. And rather than writing custom code to automate your systems, your team writes simple task descriptions that even the newest team member can understand—saving not only upfront costs, but making it easier to react to change over time.
+Red Hat® Ansible® Automation Platform offers a simple solution to deploying applications. It gives you the power to deploy multi-tier applications reliably and consistently, all from one common framework. You can configure key services as well as push application files from one common system. And rather than writing custom code to automate your systems, your team writes simple task descriptions that even the newest team member can understand—saving not only upfront costs, but making it easier to react to change over time.
 
 Duration: 60 minutes
 
@@ -27,4 +27,4 @@ The PTL team acknowledges the valuable contributions of the following Red Hat as
 
 This course assumes that you have the following prior experience:
 
-- Foundational knowledge of Linux, Containers, Ansible, and Openshift. 
+- Foundational knowledge of Linux, Containers, Ansible, and OpenShift. 
