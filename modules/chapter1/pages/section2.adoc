@@ -26,6 +26,6 @@ Operator,Red Hat OpenShift,Operator Red Hat OpenShift The Operator uses Red Hat 
 
 By following the tested deployment models recommended by Red Hat, organizations can ensure a smooth installation and deployment of the Ansible Automation Platform without the need for further actions, making all features and capabilities readily available for use.
 
-As the RPM deployment will be deprecated in future so this training will be more fouced on the other 2 deployment menthod i.e Containers and Operator. 
+The RPM deployment is expected to be deprecated in the future. Therefore, this training will be primarily focused on the other two deployment methods: Containerized and Operator. 
 
 Feel free to learn more about https://docs.redhat.com/en/documentation/red_hat_ansible_automation_platform/2.5/html/tested_deployment_models/rpm-topologies#rpm-a-env-a[RPM Tested topologies,window=_balnk].

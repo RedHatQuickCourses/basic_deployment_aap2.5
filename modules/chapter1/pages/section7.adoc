@@ -1,6 +1,6 @@
 = Operator Deployment LAB
 
-We will be using *Product Enablement AAP Operator Deployment lab* LAB for this deployment: 
+We will be using *Product Enablement AAP Operator Deployment lab* LAB for this deployment. Please be aware that setting up a Operator Lab will take about fifty minutes. Following that, you can proceed with the installation procedures:
 
 The following video will provide the step-by-step guide for installing the Ansible Automation Platform 2.5 operator:
 

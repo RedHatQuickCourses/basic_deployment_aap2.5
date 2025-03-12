@@ -1,6 +1,6 @@
 = Containerized Installation LAB 
 
-We will be using *Product Enablement Containerized AAP 2.5* LAB for this deployment: 
+We will be using *Product Enablement Containerized AAP 2.5* LAB for this deployment. Please be aware that setting up a RHEL 9 system in this lab will take about ten minutes. Following that, you can proceed with the installation procedures:
 
 The below video demonstrate the step to step guide to do the installtion of all components on a single system itslef: 
 
@@ -21,10 +21,11 @@ image::5.1.png[]
  $ sudo dnf install -y wget git-core rsync vim ansible-core
 ----
 
-. Go to the link and get the installer link:  https://access.redhat.com/downloads/content/480/ver=2.5/rhel---9/2.5/x86_64/product-software[Containerized Ansible Automation Platform]
+. Go to the https://access.redhat.com/downloads/content/480/ver=2.5/rhel---9/2.5/x86_64/product-software[Installer,window=_blank] link and Get the installer link for *Ansible Automation Platform 2.5 Containerized Setup Bundle*.
++
+Note: Since the copied link has an expiration time, please complete steps 4 and 5 sequentially to prevent the link expiration error. if facing issue then, reload the page and repeat step 4 and copy the link.  
 
-
-. Download the installer file: 
+. Download the installer file to the VM: 
 + 
 [source,bash,role=execute]
 ---- 
@@ -45,22 +46,26 @@ $ tar -xvf aap.tar.gz
 $ hostname
 ----
 
-. Enter the extracted folder and Open the *inventory-growth* file using the *vim* command and change the below 
+. Using the *cd* command, enter the extracted folder. Then, use the *vim* command, open the *inventory-growth* file and make the following changes, wherever they appear throughout the entire *inventory-growth* file:
 + 
 [source,bash,role=execute]
 ---- 
+$ cd <extracted-folder-from-step-6>
+$ vim inventory-growth
 aap.example.org → < paste system hostname>
 <set your own> → redhat
 
 <set your own> ← This value can be customized as per your need but remember to use the same while doing the login after the deployment.  
 ----
++
+Note: Please click this link to learn how to use https://www.geeksforgeeks.org/basic-vim-commands/[Vim basic operations,window=_blank].
 
-. Once the inventory file is ready follow the below steps to do the installation: 
-+ 
+. Once the inventory file is ready follow the below steps to do the installation:
++
 [source,bash,role=execute]
----- 
+----
 $ ansible-playbook -i inventory-growth ansible.containerized_installer.install
----- 
+----
 
 . Simply use the hostname from the lab deployment login page and try to access the URL from the browser on the port *443*.
 

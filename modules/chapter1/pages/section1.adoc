@@ -2,7 +2,7 @@
 
 *Ansible Core*: It includes the Ansible language and runtime, a set of built-in modules and command-line tools, and a framework for extending automation with collections.
 
-*Automation gateway*: Ansible Automation Platform is a modular platform. The platform gateway also Known as Unified UI deploys automation platform components, such as automation controller, automation hub, and Event-Driven Ansible controller. 	
+*Unified UI*: Ansible Automation Platform is a modular platform. The Unified UI give you the access to all the ansible automation platform components, such as automation controller, automation hub, Automation Analytics and Event-Driven Ansible controller. 	
 
 *Automation controller / Automation execution*: The Automation controller is the command and control center for Red Hat® Ansible® Automation Platform. It includes a webUI, API, https://www.redhat.com/en/topics/security/what-is-role-based-access-control[role-based access control (RBAC), window=_blank ], a workflow visualizer, and continuous integration and continuous delivery (CI/CD) integrations to help you organize and manage automation across your enterprise.
 

@@ -26,7 +26,7 @@ aap2.example.org
 
 The above is a example of cluster setup and there is no need to explicitly tell the script as it will take care of it automatically. This behavior is the same for different components apart from the database. 
 
-In Container There are 2 types of Deployment Topology that can be used: 
+The Containerized installation offers two types of deployment topologies from which to choose: 
 
 . *Enterprise topology pattern*: This means that all the components will be installed on different systems for better performance and stability. The Design of the architecture looks like the one below where each component is installed on different servers and the drawn lines show how the components are interacting with each other and on which port the communication is happening. 
 +
