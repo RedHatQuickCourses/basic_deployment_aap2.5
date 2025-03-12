@@ -23,7 +23,7 @@ image::5.1.png[]
 
 . Go to the https://access.redhat.com/downloads/content/480/ver=2.5/rhel---9/2.5/x86_64/product-software[Installer,window=_blank] link and Get the installer link for *Ansible Automation Platform 2.5 Containerized Setup Bundle*.
 +
-Note: Since the copied link has an expiration time, please complete steps 4 and 5 sequentially to prevent the link expiration error. if facing issue then, reload the page and repeat step 4 and copy the link.  
+Note: Please follow steps 4 and 5 one after another in order to avoid the link expiration error, as the copied URL has an expiration time. Reload the website, repeat step 4, and copy the link if you are having trouble.  
 
 . Download the installer file to the VM: 
 + 
