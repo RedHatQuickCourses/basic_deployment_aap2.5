@@ -14,7 +14,7 @@ PORT,PROTOCOL,Service,Component
 443/8433,HTTPS,Receptor,OCP Mesh ingress 
 27199,TCP,Receptor,Controller/hop/execution nodes
 50051,TCP,GRPC,Platform gateway
-6379,TCP,PostgreSQL,Redis node
+6379,TCP,Redis,Redis node
 16379,TCP,Redis,Cluster Redis for resilient configuration 
 |===
 
