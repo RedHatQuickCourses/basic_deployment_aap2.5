@@ -24,7 +24,7 @@ For cluster eg:
 aap1.example.org
 aap2.example.org
 
-The above is a example of cluster setup and there is no need to explicitly tell the script as it will take care of it automatically. This behavior is the same for different components apart from the database. 
+The above is an example of cluster setup and there is no need to explicitly tell the script as it will take care of it automatically. This behavior is the same for different components apart from the database. 
 
 The Containerized installation offers two types of deployment topologies from which to choose: 
 

@@ -4,9 +4,9 @@ The Ansible Automation Platform Operator provides cloud-native, push-button depl
 
  Note: You can deploy multiple isolated instances of Ansible Automation Platform into the same Red Hat OpenShift Container Platform cluster by using a namespace-scoped deployment model. This approach allows you to use the same cluster for several deployments. 					
  
-There are two deployment Topologies in this: 
+There are two deployment topologies in this: 
 
-. *Operator growth Topology*: The growth topology is intended for organizations that are getting started with Ansible Automation Platform and do not require redundancy or higher computing for large volumes of automation. This topology allows for smaller footprint deployments.
+. *Operator growth topology*: The growth topology is intended for organizations that are getting started with Ansible Automation Platform and do not require redundancy or higher computing for large volumes of automation. This topology allows for smaller footprint deployments.
 + 
 image::6.1.png[]
 +
@@ -26,7 +26,7 @@ The above infrastructure topology describes an OpenShift Cluster with 3 primary 
 +
 The benefits of using this topology method: 
 
-.. Designed for large-scale operations with High availability and fault tolerance.
+.. Designed for large-scale operations with high availability and fault tolerance.
 .. Optimized for enterprise environments with strict SLAs.
 .. Multiple instances for each component: Automation Hub, Controller, etc.
 
