@@ -6,7 +6,7 @@ The following video will provide the step-by-step guide for installing the Ansib
 
 video::operator_aap.mp4[align="center",width=800,height=500]
 
-All the followed steps in the vidoe are shared below:
+All the followed steps in the video are shared below:
 
 . Log in to the Red Hat OpenShift Container Platform.
 . Navigate to Operators OperatorHub.
@@ -18,7 +18,7 @@ All the followed steps in the vidoe are shared below:
 
 . Select project as *aap* if it's not aap. 
 
-. There scroll to the option *Ansible Automation Platform* and click on *Create instance* which will deploy all the componenets of *AAP*.
+. There scroll to the option *Ansible Automation Platform* and click on *Create instance* which will deploy all the components of *AAP*.
 
 . Provide the *Name* on which will be used to create the resources for that *AAP* like network routes,secrets. 
 

@@ -1,6 +1,6 @@
 = Summary
 
-- Understanding the components of Ansible Autoamtion Platform.
+- Understanding the components of Ansible Automation Platform.
 - Getting information about the installation topologies/methods.
 - How to evaluate correct deployment according to the Infrastructure.
 - Network ports and protocols that help in the communication of AAP. 

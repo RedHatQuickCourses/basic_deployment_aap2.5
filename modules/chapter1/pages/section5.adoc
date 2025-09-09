@@ -2,7 +2,7 @@
 
 We will be using *Product Enablement Containerized AAP 2.5* LAB for this deployment. Please be aware that setting up a RHEL 9 system in this lab will take about ten minutes. Following that, you can proceed with the installation procedures:
 
-The below video demonstrate the step to step guide to do the installtion of all components on a single system itslef: 
+The below video demonstrates the step to step guide to do the installation of all components on a single system itself: 
 
 video::container_aap_lab.mp4[align="left",width=800,height=500]
 
@@ -69,7 +69,7 @@ $ ansible-playbook -i inventory-growth ansible.containerized_installer.install
 
 . Simply use the hostname from the lab deployment login page and try to access the URL from the browser on the port *443*.
 
-. Use the user *admin* and the *password* set during the time of installation. In the above video i set it to *redhat*. 
+. Use the user *admin* and the *password* set during the time of installation. In the above video I set it to *redhat*. 
 
  Note: Try to use stronger password while doing the enterprise deployment 
 
