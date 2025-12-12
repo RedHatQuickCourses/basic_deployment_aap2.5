@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Containerized Installation :: Basic Deployment of Ansible Automation platform 2.5</title>
+    <link rel="prev" href="section3.html">
+    <link rel="next" href="section5.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../..">Basic Deployment of Ansible Automation platform 2.5</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/RedHatQuickCourses/basic_deployment_aap2.5/issues" target="_blank">Report Issues</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="modules" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Basic Deployment of Ansible Automation platfornm 2.5</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../LABENV/index.html">Lab Environment</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Introduction to Deployment</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section1.html">Components of AAP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section2.html">On-premise Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section3.html">Understand the Network Port and Protocols</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="section4.html">Containerized Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section5.html">Containerized Installation LAB</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section6.html">Operator Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section7.html">Operator Deployment LAB</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section8.html">Summary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../appendix/appendix.html">Appendix</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Basic Deployment of Ansible Automation platfornm 2.5</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Basic Deployment of Ansible Automation platfornm 2.5</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Basic Deployment of Ansible Automation platfornm 2.5</a></li>
+    <li><a href="index.html">Introduction to Deployment</a></li>
+    <li><a href="section4.html">Containerized Installation</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Containerized Installation</h1>
+<div class="paragraph">
+<p><strong>Inventory file</strong>: Inventory files allow you to manage the Ansible Automation Platform installation. Inventory files specify variables for components, hosts, and containers created and used, and additional information required for customizing the installation.</p>
+</div>
+<div class="paragraph">
+<p>We can create an inventory file or use the inventory file provided inside the tar file provided by the Red Hat Installer of containerized Ansible Automation Platform.</p>
+</div>
+<div class="paragraph">
+<p>Inside the Installer folder, you will have 2 different Inventory files that can be used for installation for different purposes.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The default one named <strong>inventory</strong> is for the enterprise topology pattern.</p>
+</li>
+<li>
+<p>If you want to deploy the growth or all-in-one pattern you need to copy over or use the <strong>inventory-growth</strong> file instead.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Both standalone and cluster systems are quite easy to set up. If there is only one hostname listed under the component name, it is a standalone configuration; if there are several hostnames listed under the single group name, it is a cluster setup. All you need to do is add the systems under the group name of the component you wish to install.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">For eg:
+[automationgateway] ← This is a automationgateway group / component that will get installed
+aap.example.org</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The above will be a standalone setup. Once the installation script will run it will automatically take care of that.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">For cluster eg:
+[automationgateway]
+aap1.example.org
+aap2.example.org</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The above is an example of cluster setup and there is no need to explicitly tell the script as it will take care of it automatically. This behavior is the same for different components apart from the database.</p>
+</div>
+<div class="paragraph">
+<p>The Containerized installation offers two types of deployment topologies from which to choose:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Enterprise topology pattern</strong>: This means that all the components will be installed on different systems for better performance and stability. The Design of the architecture looks like the one below where each component is installed on different servers and the drawn lines show how the components are interacting with each other and on which port the communication is happening.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/4.1.png" alt="4.1">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Enterprise topology</strong> is appropriate for infrastructure that needs:</p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Lightweight deployment, smaller footprints.</p>
+</li>
+<li>
+<p>Suitable for scaling or adding mesh.</p>
+</li>
+<li>
+<p>Designed for deployment with redundancy/HA or higher computing for big volumes of automation.</p>
+<div class="paragraph">
+<p>The benefits of using this topology:</p>
+</div>
+</li>
+<li>
+<p>Protected from the underlying OS changes and system dependencies.</p>
+</li>
+<li>
+<p>Isolated from other applications and are more secure.</p>
+</li>
+<li>
+<p>Simplified upgrades</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><strong>All-in-one pattern</strong>: In this, we will be installing all the components in a single system to create a testing environment or POC to understand the working. In this, we are going to do <strong>All-in-one</strong> pattern deployment.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/4.2.png" alt="4.2">
+</div>
+</div>
+<div class="paragraph">
+<p>The above will be deployed on a single system itself where 8433 will be the port for the <strong>Unified UI</strong> to be accessed.</p>
+</div>
+<div class="paragraph">
+<p><strong>All-in-one pattern</strong> is suitable for infrastructure according to the below needs:</p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Intended for organizations that are getting started with Ansible Automation Platform.</p>
+</li>
+<li>
+<p>All-in-one deployment on a single system reduces infrastructure costs.</p>
+</li>
+<li>
+<p>Not ideal for scaling or adding mesh.</p>
+</li>
+<li>
+<p>Suitable for small test environments.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The benefits of using this topology:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Protected from the underlying OS changes and system dependencies.</p>
+</li>
+<li>
+<p>Easy to Deploy and manage.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="section3.html">Understand the Network Port and Protocols</a></span>
+  <span class="next"><a href="section5.html">Containerized Installation LAB</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img src="../../_/img/rhl-logo-red.png" height="40px" alt="Red Hat"  href="https://redhat.com" >
+</footer><script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

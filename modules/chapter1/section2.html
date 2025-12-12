@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>On-premise Installation :: Basic Deployment of Ansible Automation platform 2.5</title>
+    <link rel="prev" href="section1.html">
+    <link rel="next" href="section3.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../..">Basic Deployment of Ansible Automation platform 2.5</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/RedHatQuickCourses/basic_deployment_aap2.5/issues" target="_blank">Report Issues</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="modules" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Basic Deployment of Ansible Automation platfornm 2.5</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../LABENV/index.html">Lab Environment</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Introduction to Deployment</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section1.html">Components of AAP</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="section2.html">On-premise Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section3.html">Understand the Network Port and Protocols</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section4.html">Containerized Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section5.html">Containerized Installation LAB</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section6.html">Operator Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section7.html">Operator Deployment LAB</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section8.html">Summary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../appendix/appendix.html">Appendix</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Basic Deployment of Ansible Automation platfornm 2.5</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Basic Deployment of Ansible Automation platfornm 2.5</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Basic Deployment of Ansible Automation platfornm 2.5</a></li>
+    <li><a href="index.html">Introduction to Deployment</a></li>
+    <li><a href="section2.html">On-premise Installation</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">On-premise Installation</h1>
+<div class="paragraph">
+<p>There are 3 different ways by which you can do the installation to your local infrastructure i.e. RPM, Containerized, and Operator. In this, we are going to learn about the Future of Deployment method which is known as Containerized installation. The RPM installation is more or less the same and as the RPM will be getting deprecated in the future our focus will be on understanding the other 2 Containerized and Operator-based deployment.</p>
+</div>
+<div class="paragraph">
+<p>System Requirements</p>
+</div>
+<div class="paragraph">
+<p>Since the Container and Operator-based deployment needs 3000 IOPS (input/output operations per second) compared to the VM base Deployment of 1500 IOPS please refer to the below Guides while doing the deployment:</p>
+</div>
+<div class="paragraph">
+<p>RPM: The <a href="https://docs.redhat.com/en/documentation/red_hat_ansible_automation_platform/2.5/html/rpm_installation/platform-system-requirements" target="_blank" rel="noopener">System requirements</a> section of RPM installation.</p>
+</div>
+<div class="paragraph">
+<p>Containerized: The <a href="https://docs.redhat.com/en/documentation/red_hat_ansible_automation_platform/2.5/html/containerized_installation/aap-containerized-installation#system_requirements" target="_blank" rel="noopener">System requirements</a> section of Containerized installation.</p>
+</div>
+<div class="paragraph">
+<p>For <a href="https://docs.redhat.com/en/documentation/red_hat_ansible_automation_platform/2.5/html/tested_deployment_models/ocp-topologies#tested_system_configurations_6" target="_blank" rel="noopener">System requirements</a> for installing Ansible Automation Platform on OpenShift Container Platform, see the Tested system configurations section of Tested deployment models.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/2.1.png" alt="2.1">
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Here are the Tested topologies:</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Mode</th>
+<th class="tableblock halign-left valign-top">Infrastructure</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Tested topologies</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RPM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Virtual machines and bare metal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The RPM installer deploys Ansible Automation Platform on Red Hat Enterprise Linux by using RPMs to install the platform on host machines. Customers manage the product and infrastructure lifecycle.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RPM growth topology/RPM mixed growth topology/RPM enterprise topology and RPM mixed enterprise topology</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Containers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Virtual machines and bare metal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The containerized installer deploys Ansible Automation Platform on Red Hat Enterprise Linux by using  podman which runs the platform in containers on host machines. Customers manage the product and infrastructure lifecycle</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Container growth topology and Container enterprise topology</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Operator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Red Hat OpenShift</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Operator Red Hat OpenShift The Operator uses Red Hat OpenShift Operators to deploy Ansible Automation Platform within Red Hat OpenShift. Customers manage the product and infrastructure lifecycle</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Operator growth topology and Operator enterprise topology</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>By following the tested deployment models recommended by Red Hat, organizations can ensure a smooth installation and deployment of the Ansible Automation Platform without the need for further actions, making all features and capabilities readily available for use.</p>
+</div>
+<div class="paragraph">
+<p>The RPM deployment is expected to be deprecated in the future. Therefore, this training will be primarily focused on the other two deployment methods: Containerized and Operator.</p>
+</div>
+<div class="paragraph">
+<p>Feel free to learn more about <a href="https://docs.redhat.com/en/documentation/red_hat_ansible_automation_platform/2.5/html/tested_deployment_models/rpm-topologies#rpm-a-env-a" target="_blank" rel="noopener">RPM Tested topologies</a>.</p>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="section1.html">Components of AAP</a></span>
+  <span class="next"><a href="section3.html">Understand the Network Port and Protocols</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img src="../../_/img/rhl-logo-red.png" height="40px" alt="Red Hat"  href="https://redhat.com" >
+</footer><script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

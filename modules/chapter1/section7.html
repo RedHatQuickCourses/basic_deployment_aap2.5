@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Operator Deployment LAB :: Basic Deployment of Ansible Automation platform 2.5</title>
+    <link rel="prev" href="section6.html">
+    <link rel="next" href="section8.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../..">Basic Deployment of Ansible Automation platform 2.5</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/RedHatQuickCourses/basic_deployment_aap2.5/issues" target="_blank">Report Issues</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="modules" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Basic Deployment of Ansible Automation platfornm 2.5</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../LABENV/index.html">Lab Environment</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Introduction to Deployment</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section1.html">Components of AAP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section2.html">On-premise Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section3.html">Understand the Network Port and Protocols</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section4.html">Containerized Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section5.html">Containerized Installation LAB</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section6.html">Operator Installation</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="section7.html">Operator Deployment LAB</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section8.html">Summary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../appendix/appendix.html">Appendix</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Basic Deployment of Ansible Automation platfornm 2.5</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Basic Deployment of Ansible Automation platfornm 2.5</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Basic Deployment of Ansible Automation platfornm 2.5</a></li>
+    <li><a href="index.html">Introduction to Deployment</a></li>
+    <li><a href="section7.html">Operator Deployment LAB</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Operator Deployment LAB</h1>
+<div class="paragraph">
+<p>We will be using <strong>Product Enablement AAP Operator Deployment lab</strong> LAB for this deployment. Please be aware that setting up a Operator Lab will take about fifty minutes. Following that, you can proceed with the installation procedures:</p>
+</div>
+<div class="paragraph">
+<p>The following video will provide the step-by-step guide for installing the Ansible Automation Platform 2.5 operator:</p>
+</div>
+<div class="videoblock text-center">
+<div class="content">
+<video src="_images/operator_aap.mp4" width="800" height="500" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+<div class="paragraph">
+<p>All the followed steps in the video are shared below:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log in to the Red Hat OpenShift Container Platform.</p>
+</li>
+<li>
+<p>Navigate to Operators OperatorHub.</p>
+</li>
+<li>
+<p>Search for <strong>Ansible Automation Platform</strong> and click <strong>Install</strong>.</p>
+</li>
+<li>
+<p>Select a <strong>stable-2.5</strong>.</p>
+</li>
+<li>
+<p>Select namespace as default which will be <strong>aap</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Install</strong>.</p>
+</li>
+<li>
+<p>Go to <strong>Installed Operators</strong> and there you will see <strong>Ansible Automation Platform</strong> operator installed click on it.</p>
+</li>
+<li>
+<p>Select project as <strong>aap</strong> if it&#8217;s not aap.</p>
+</li>
+<li>
+<p>There scroll to the option <strong>Ansible Automation Platform</strong> and click on <strong>Create instance</strong> which will deploy all the components of <strong>AAP</strong>.</p>
+</li>
+<li>
+<p>Provide the <strong>Name</strong> on which will be used to create the resources for that <strong>AAP</strong> like network routes,secrets.</p>
+<div class="literalblock">
+<div class="content">
+<pre>Note: There are many other options that we can customize according to the requirement but in this we will be taking care of very basic deployment.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Click on <strong>Create</strong> it will deploy the resournces which will take around 20 minutes.</p>
+</li>
+<li>
+<p>On openshift dashboard <strong>Click on</strong> Networking and then routes and click on the <strong>ansible</strong> route or the <strong>Name</strong> given in Step 10 above.</p>
+</li>
+<li>
+<p>On openshift dashboard go to <strong>Workloads</strong> and then <strong>Secrets</strong> and search for <strong>admin</strong> . click on it and copy the <strong>password</strong>.</p>
+</li>
+<li>
+<p>Provide the <strong>Red Hat login ID</strong> to get the subscription for attaching it to the AAP and <strong>60-day subscription to Red Hat Ansible® Automation Platform</strong> or <strong>Red Hat Developer Subscription for Individuals</strong> subscription can be used for this lab.</p>
+</li>
+<li>
+<p>Submit it and run the <strong>Project sync</strong> of the <strong>Demo project</strong> to confirm the job is getting executed.</p>
+</li>
+</ol>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="section6.html">Operator Installation</a></span>
+  <span class="next"><a href="section8.html">Summary</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img src="../../_/img/rhl-logo-red.png" height="40px" alt="Red Hat"  href="https://redhat.com" >
+</footer><script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
