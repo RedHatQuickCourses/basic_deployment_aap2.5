@@ -2,8 +2,13 @@
 Print : 
 
 { rhel9_instance_image }
+
 { bastion_public_hostname }
+
 { bastion_ssh_user_name }
+
 { bastion_ssh_password }
+
 { ssh_username }
+
 { ssh_password }
