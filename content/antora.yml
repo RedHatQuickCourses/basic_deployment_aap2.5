@@ -1,0 +1,9 @@
+name: modules
+title: Basic Deployment of Ansible Automation platfornm 2.5
+version: master
+nav:
+- ../modules/ROOT/nav.adoc
+- ../modules/LABENV/nav.adoc
+- ../modules/chapter1/nav.adoc
+- ../modules/appendix/nav.adoc
+
