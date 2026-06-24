@@ -1,0 +1,78 @@
+= Containerized Installation LAB 
+
+We will be using *Product Enablement Containerized AAP 2.5* LAB for this deployment. Please be aware that setting up a RHEL 9 system in this lab will take about ten minutes. Following that, you can proceed with the installation procedures:
+
+The below video demonstrates the step to step guide to do the installation of all components on a single system itself: 
+
+video::container_aap_lab.mp4[align="left",width=800,height=500]
+
+all the above steps followed in the video are shared below: 
+
+. We are going to follow an All-in-one pattern approach for the setup. 
++
+image::5.1.png[]
+
+. Once the lab is deployed and you are accessing the system via *ssh* terminal make sure to run everything as a normal user only and use the sudo command to perform any root-level operations. 
+
+. Install the required and useful utilities:
++
+[source,bash,role=execute]
+----
+ $ sudo dnf install -y wget git-core rsync vim ansible-core
+----
+
+. Go to the https://access.redhat.com/downloads/content/480/ver=2.5/rhel---9/2.5/x86_64/product-software[Installer,window=_blank] link and Get the installer link for *Ansible Automation Platform 2.5 Containerized Setup Bundle*.
++
+Note: Please follow steps 4 and 5 one after another in order to avoid the link expiration error, as the copied URL has an expiration time. Reload the website, repeat step 4, and copy the link if you are having trouble.  
+
+. Download the installer file to the VM: 
++ 
+[source,bash,role=execute]
+---- 
+$ wget -O aap.tar.gz "<paste-link-here taken from step 4>"
+----
+
+. Extract the *aap.tar.gz* file using the following command:
++ 
+[source,bash,role=execute]
+---- 
+$ tar -xvf aap.tar.gz
+----
+
+. Get the hostname from the system and copy it.
++ 
+[source,bash,role=execute]
+---- 
+$ hostname
+----
+
+. Using the *cd* command, enter the extracted folder. Then, use the *vim* command, open the *inventory-growth* file and make the following changes, wherever they appear throughout the entire *inventory-growth* file:
++ 
+[source,bash,role=execute]
+---- 
+$ cd <extracted-folder-from-step-6>
+$ vim inventory-growth
+aap.example.org → < paste system hostname>
+<set your own> → redhat
+
+<set your own> ← This value can be customized as per your need but remember to use the same while doing the login after the deployment.  
+----
++
+Note: Please click this link to learn how to use https://www.geeksforgeeks.org/basic-vim-commands/[Vim basic operations,window=_blank].
+
+. Once the inventory file is ready follow the below steps to do the installation:
++
+[source,bash,role=execute]
+----
+$ ansible-playbook -i inventory-growth ansible.containerized_installer.install
+----
+
+. Simply use the hostname from the lab deployment login page and try to access the URL from the browser on the port *443*.
+
+. Use the user *admin* and the *password* set during the time of installation. In the above video I set it to *redhat*. 
+
+ Note: Try to use stronger password while doing the enterprise deployment 
+
+. Provide the *Red Hat login ID* to get the subscription for attaching it to the AAP and *60-day subscription to Red Hat Ansible® Automation Platform* or *Red Hat Developer Subscription for Individuals* subscription can be used for this lab.
+
+. After *Login* run the *Project sync* for the *Demo project* to confirm the job is getting executed.

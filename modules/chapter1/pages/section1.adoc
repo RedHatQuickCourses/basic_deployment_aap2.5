@@ -26,3 +26,9 @@ Event-driven Ansible can process events containing discrete intelligence about c
 
 *Automation Mesh*: Automation mesh primarily supports peer-to-peer network connectivity between the controller nodes and the execution/hop nodes through the utilization of a service known as a receptor. It maintains the connection and helps the Controller node to get updates from the worker node or to assign the work to the worker nodes.
 
+> **Important Password Security**:
+
+> - Use strong, unique passwords for each component
+> - Do NOT use special characters like `,`, `"`, or `@` in passwords (they can break the installer)
+> - Supported special characters: `!`, `#`, `$`, `%`, and `&`
+> - Store this inventory file securely – it contains sensitive credentials!

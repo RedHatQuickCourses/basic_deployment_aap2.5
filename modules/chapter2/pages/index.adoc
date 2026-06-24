@@ -1,0 +1,15 @@
+= Ansible Automation Platform 2.7 Installation
+
+Welcome to the Ansible Automation Platform (AAP) 2.7 Installation Lab. In this hands-on module, you will gain practical experience deploying AAP using two modern installation approaches: containerized deployments on Red Hat Enterprise Linux and operator-based deployments on Red Hat OpenShift. Through guided exercises, you will learn how to prepare the required infrastructure, configure deployment resources, and install platform components while gaining an understanding of the architectural differences and operational benefits of each deployment method.
+
+== Learning Objectives
+
+By the end of this lab, you will be able to:
+
+1. Identify the prerequisites and deployment requirements for containerized and operator-based Ansible Automation Platform installations.
+
+2. Configure installation resources, including inventory files for containerized deployments and Custom Resources (CRs) for OpenShift-based deployments.
+
+3. Deploy Ansible Automation Platform using both the containerized installer and the OpenShift Operator framework.
+
+4. Validate installed platform services and understand key configuration options for scaling, security, and lifecycle management.

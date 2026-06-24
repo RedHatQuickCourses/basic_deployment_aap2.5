@@ -1,35 +1,13 @@
-= Operator Deployment LAB
+= Summary
 
-We will be using *Product Enablement AAP Operator Deployment lab* LAB for this deployment. Please be aware that setting up a Operator Lab will take about fifty minutes. Following that, you can proceed with the installation procedures:
+. *Platform Components* - AAP 2.7 provides modular components: Automation Controller (command/control center), Automation Hub (content repository), Event-Driven Ansible (automated responses), execution/hop nodes (scalable  workers), and infrastructure (PostgreSQL, Redis, Automation Mesh).
 
-The following video will provide the step-by-step guide for installing the Ansible Automation Platform 2.5 operator:
+. *Architecture & Metrics* - Jobs flow from Platform Gateway authentication through Controller dispatch to containerized execution nodes with real-time results. The new Metrics Service collects anonymized usage statistics for  capacity planning without exposing sensitive data.
 
-video::operator_aap.mp4[align="center",width=800,height=500]
+. *Deployment Options* - Choose containerized installer (Podman on RHEL for air-gapped/full control) or operator-based (Kubernetes on OpenShift for simplified cloud-native operations with automatic provisioning).
 
-All the followed steps in the video are shared below:
+. *Capacity & High Availability* - Size from 8GB/2CPU (dev) to 64GB/16CPU (large production). Implement HA with multiple gateway/controller nodes, PostgreSQL clustering, and 3+ execution nodes. Backup databases daily and test restores quarterly.
 
-. Log in to the Red Hat OpenShift Container Platform.
-. Navigate to Operators OperatorHub.
-. Search for *Ansible Automation Platform* and click *Install*.
-. Select a *stable-2.5*.
-. Select namespace as default which will be *aap*.
-. Click *Install*.
-. Go to *Installed Operators* and there you will see *Ansible Automation Platform* operator installed click on it. 
+. *Security Practices* - Use Ansible Vault for secrets, rotate credentials every 90 days, implement RBAC with least privilege, enable TLS 1.2+, restrict database access, configure firewalls, and integrate audit logs with SIEM.
 
-. Select project as *aap* if it's not aap. 
-
-. There scroll to the option *Ansible Automation Platform* and click on *Create instance* which will deploy all the components of *AAP*.
-
-. Provide the *Name* on which will be used to create the resources for that *AAP* like network routes,secrets. 
-
- Note: There are many other options that we can customize according to the requirement but in this we will be taking care of very basic deployment. 
-
-. Click on *Create* it will deploy the resournces which will take around 20 minutes. 
-
-. On openshift dashboard *Click on* Networking and then routes and click on the *ansible* route or the *Name* given in Step 10 above.
-
-. On openshift dashboard go to *Workloads* and then *Secrets* and search for *admin* . click on it and copy the *password*. 
-
-. Provide the *Red Hat login ID* to get the subscription for attaching it to the AAP and *60-day subscription to Red Hat Ansible® Automation Platform* or *Red Hat Developer Subscription for Individuals* subscription can be used for this lab.  
-
-. Submit it and run the *Project sync* of the *Demo project* to confirm the job is getting executed.
+. *Operational Management* - Organize by environment/business unit, version playbooks in Git, design reusable job templates, monitor with Prometheus/Grafana, track job success rates and resource utilization, and maintain architecture and DR documentation.

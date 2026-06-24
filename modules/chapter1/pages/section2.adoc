@@ -1,31 +1,86 @@
-= On-premise Installation 
+= Architecture Overview
 
-There are 3 different ways by which you can do the installation to your local infrastructure i.e. RPM, Containerized, and Operator. In this, we are going to learn about the Future of Deployment method which is known as Containerized installation. The RPM installation is more or less the same and as the RPM will be getting deprecated in the future our focus will be on understanding the other 2 Containerized and Operator-based deployment. 
+== How the Platform Works
+
+Let's walk through what happens when you run an automation job:
+
+**Step 1: User Authentication**
+ 
+- User logs in through the Platform Gateway (HTTPS port 443)
+- Gateway authenticates against the authentication backend
+- Session token is issued
+
+**Step 2: Job Creation**
+
+- User creates a job through the Automation Controller web UI or API
+- Controller validates the job template, inventory, and credentials
+- Job details are stored in the PostgreSQL database
+
+**Step 3: Job Execution**
+
+- Controller selects an available execution node (or uses the control plane)
+- Job is dispatched through the Receptor mesh network
+- Execution node pulls the execution environment container image
+- Ansible playbook runs inside the container
+
+**Step 4: Results Collection**
+
+- Job output streams back to the controller in real-time
+- Results are stored in the database
+- User can view progress through the web UI
+
+**Step 5: Event-Driven Response** (if configured)
+
+- Events from the job can trigger EDA rules
+- EDA can automatically launch additional jobs based on conditions
+
+> **Real-world example**: Imagine you're deploying a web application. The controller runs the playbook, execution nodes do the actual work on your servers, and if the deployment fails, EDA can automatically trigger a rollback job!
 
 
-System Requirements
+== Metrics Service Architecture (New in 2.7)
 
-Since the Container and Operator-based deployment needs 3000 IOPS (input/output operations per second) compared to the VM base Deployment of 1500 IOPS please refer to the below Guides while doing the deployment: 
+AAP 2.7 introduces a **Metrics Service** that collects anonymized usage data. Understanding this helps with capacity planning:
 
-RPM: The https://docs.redhat.com/en/documentation/red_hat_ansible_automation_platform/2.5/html/rpm_installation/platform-system-requirements[System requirements, window=_blank ] section of RPM installation. 			
+*What it collects*:
 
-Containerized: The https://docs.redhat.com/en/documentation/red_hat_ansible_automation_platform/2.5/html/containerized_installation/aap-containerized-installation#system_requirements[System requirements, window=_blank ] section of Containerized installation. 			
+- Job execution statistics (success/failure counts, duration)
+- Host summary statistics (per host execution performance)
+- Credential type statistics (counts of credential types)
+- Execution environment statistics
+- Collection statistics
+- Ansible Automation Platform configurations like (Project SCM types, Organization counts, version Information, Feature flags, Warnings and Deprecation notices) 
 
-For https://docs.redhat.com/en/documentation/red_hat_ansible_automation_platform/2.5/html/tested_deployment_models/ocp-topologies#tested_system_configurations_6[System requirements, window=_blank ] for installing Ansible Automation Platform on OpenShift Container Platform, see the Tested system configurations section of Tested deployment models. 
+*What it does NOT collect*:
 
-image::2.1.png[]
+- Job template names
+- Customer-defined credential names
+- Customer-defined execution environment names
+- Customer-defined collection names
+- Event data
+- Host inventory data
+- Playbook names
+- Variable names and values
+- Workflow template names
 
-.Here are the Tested topologies:
-[format="csv", options="header"]
+> **Privacy Note**: Only aggregated statistics and counts are transmitted. No personal data leaves your environment!
+
+.Architecture Components:
 |===
-Mode, Infrastructure, Description , Tested topologies
-RPM, Virtual machines and bare metal, The RPM installer deploys Ansible Automation Platform on Red Hat Enterprise Linux by using RPMs to install the platform on host machines. Customers manage the product and infrastructure lifecycle., RPM growth topology/RPM mixed growth topology/RPM enterprise topology and RPM mixed enterprise topology
-Containers,Virtual machines and bare metal,The containerized installer deploys Ansible Automation Platform on Red Hat Enterprise Linux by using  podman which runs the platform in containers on host machines. Customers manage the product and infrastructure lifecycle, Container growth topology and Container enterprise topology
-Operator,Red Hat OpenShift,Operator Red Hat OpenShift The Operator uses Red Hat OpenShift Operators to deploy Ansible Automation Platform within Red Hat OpenShift. Customers manage the product and infrastructure lifecycle,Operator growth topology and Operator enterprise topology
+|Component | Container Name | Purpose 
+| **Metrics Web** | `automation-metrics-web` | Nginx proxy + Gunicorn serving Django application 
+| **Metrics Tasks** | `automation-metrics-tasks` | Background async task worker for job execution
+| **Metrics Scheduler** | `automation-metrics-scheduler` | APScheduler for periodic data collection 
+| **Init Container** | `automation-metrics-init` | One-shot container for database migrations 
+| **Metrics Database** | PostgreSQL | Stores processed metrics data 
 |===
 
-By following the tested deployment models recommended by Red Hat, organizations can ensure a smooth installation and deployment of the Ansible Automation Platform without the need for further actions, making all features and capabilities readily available for use.
+=== Data Flow:
+1. Scheduler triggers collection tasks every hour
+2. Tasks query automation controller database (read-only access)
+3. Raw data is processed and anonymized
+4. Anonymized metrics are stored in the metrics database
+5. Daily at 3:00 AM, data is anonymized and transmitted to Red Hat via Segment
 
-The RPM deployment is expected to be deprecated in the future. Therefore, this training will be primarily focused on the other two deployment methods: Containerized and Operator. 
+> **PRO TIP**: You can disable metrics collection by setting feature flags during installation!
 
-Feel free to learn more about https://docs.redhat.com/en/documentation/red_hat_ansible_automation_platform/2.5/html/tested_deployment_models/rpm-topologies#rpm-a-env-a[RPM Tested topologies,window=_blank].
+

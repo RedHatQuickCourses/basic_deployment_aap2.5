@@ -1,23 +1,63 @@
-= Understand the Network Port and Protocols
+= Containerized vs Operator Deployment
 
-Red Hat Ansible Automation Platform uses several ports to communicate with its services. These ports must be open and available for bidirectional traffic between the Red Hat Ansible Automation Platform server in order for it to work. Ensure that these ports are available and are not blocked by the server firewall.
+AAP 2.7 offers two deployment methods. Understanding when to use each is important:
 
+== Containerized Installer (RHEL-based)
 
-.Here is a list of ports and protocols with service name:
-[format="csv", options="header"]
+**What it is**: Ansible role that deploys AAP as Podman containers on RHEL hosts
+
+**When to use**:
+
+- RHEL-based infrastructure
+- You want full control over the infrastructure
+- You're comfortable managing RHEL systems
+- You need disconnected/air-gapped installations
+- Existing infrastructure automation with Ansible
+
+**Characteristics**:
+
+- Deployment: Using containers for each component.
+- Configuration: Manual inventory file edits
+- Management: Podman with systemd units
+- Network: Manual firewall rules
+- Upgrades: Re-run installer with updated inventory
+
+**Management complexity**: Medium to High
+
+== Operator-based (OpenShift)
+
+**What it is**: Kubernetes operator managing AAP on OpenShift Container Platform
+
+**When to use**:
+
+- OpenShift infrastructure
+- You want simplified configuration
+- You prefer cloud-native operations
+- You need automatic failover
+- You have OpenShift expertise
+
+**Characteristics**:
+
+- Deployment: Kubernetes operator
+- Configuration: Single CR (Custom Resource) field
+- Management: Kubernetes deployments managed by operator
+- Network: Automatic Kubernetes services and routes
+- Upgrades: Operator handles upgrades automatically
+
+**Management complexity**: Low (if you know Kubernetes/OpenShift)
+
+.Comparison Table:
 |===
-PORT,PROTOCOL,Service,Component 
-
-22,TCP,SSH,ALL components. 
-80/443,TCP,HTTP/HTTPS,ALL components with GUI
-5432,TCP,PostgreSQL,Database
-443/8433,HTTPS,Receptor,OCP Mesh ingress 
-27199,TCP,Receptor,Controller/hop/execution nodes
-50051,TCP,GRPC,Platform gateway
-6379,TCP,Redis,Redis node
-16379,TCP,Redis,Cluster Redis for resilient configuration 
+| Aspect | Containerized Installer | Operator (OpenShift) 
+| Platform | RHEL | OpenShift 
+| Deployment method | Ansible role | Kubernetes operator 
+| Configuration complexity | Manual inventory | Single CR field 
+| Database provisioning | Administrator provisions | Operator auto-provisions 
+| Container management | Podman with systemd | Kubernetes deployments 
+| Network configuration | Manual firewall/ports | Automatic K8s services 
+| OAuth integration | Manual | Automatic with platform gateway 
+| Upgrades | Re-run installer | Operator handles via CR updates 
+| Backup/restore | Manual playbook | Operator-managed CR
 |===
 
-Note: The above are default destination ports and the installer inventory listed is configurable. If you choose to configure them to suit your environment, you might experience a change in behavior. 			 
-
-For more information on Variables that can be used to change the port refer to the https://docs.redhat.com/en/documentation/red_hat_ansible_automation_platform/2.5/html-single/planning_your_installation/index#system_requirements_for_rpm_installation[Planning your installation of Ansible Automation Platform., window=_blank]
+> **Pro Tip**: Choose based on your existing infrastructure. If you're already using RHEL, containerized installer integrates smoothly. If you're on OpenShift, the operator simplifies operations significantly.

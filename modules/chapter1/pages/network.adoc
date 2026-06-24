@@ -1,0 +1,80 @@
+= Understand the Network Port and Protocols
+
+Red Hat Ansible Automation Platform uses several ports to communicate with its services. These ports must be open and available for bidirectional traffic between the Red Hat Ansible Automation Platform server in order for it to work. Ensure that these ports are available and are not blocked by the server firewall.
+
+
+.Required Network Connectivity
+[options="header"]
+|===
+| Source | Destination | Protocol/Port | Purpose
+
+| metrics service 
+| Controller database 
+| PostgreSQL (5432) 
+| Read-only data collection via ms_awx_readonly user
+
+| metrics service 
+| metrics_service database 
+| PostgreSQL (5432) 
+| Metrics storage and retrieval
+
+| metrics service 
+| Gateway 
+| HTTPS (443) 
+| Anonymized data transmission to /api/metrics/ endpoint
+
+| Monitoring systems (optional) 
+| metrics service 
+| HTTP (8087) 
+| Health check endpoint at /health/ via nginx
+|===
+
+.Default Component Ports
+[options="header"]
+|===
+| Component | Protocol | Default Port(s)
+
+| Platform Gateway 
+| HTTP / HTTPS 
+| 80 / 443 
+
+| Automation Controller 
+| HTTP / HTTPS 
+| 8080 / 8443 
+
+| Automation Hub 
+| HTTPS 
+| 8444 
+
+| Event-Driven Ansible (EDA) 
+| HTTP / HTTPS 
+| 8082 / 8445 
+
+| Red Hat Ansible Lightspeed 
+| HTTP / HTTPS 
+| 8084 / 8447 
+
+| Metrics Service Nginx 
+| HTTP / HTTPS 
+| 8087 / 8450 
+
+| PostgreSQL Database 
+| PostgreSQL 
+| 5432 
+
+| Redis 
+| Redis 
+| 6379 
+
+| Receptor 
+| TCP / UDP 
+| 27199 
+
+| Gateway Control Plane 
+| gRPC 
+| 50051 
+|===
+
+Note: The above are default destination ports and the installer inventory listed is configurable. If you choose to configure them to suit your environment, you might experience a change in behavior. 			 
+
+For more information on Variables that can be used to change the port refer to the https://docs.redhat.com/en/documentation/red_hat_ansible_automation_platform/2.5/html-single/planning_your_installation/index#system_requirements_for_rpm_installation[Planning your installation of Ansible Automation Platform., window=_blank]

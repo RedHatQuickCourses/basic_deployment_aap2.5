@@ -1,67 +1,82 @@
-= Containerized Installation
+= Deployment Best Practices
 
-*Inventory file*: Inventory files allow you to manage the Ansible Automation Platform installation. Inventory files specify variables for components, hosts, and containers created and used, and additional information required for customizing the installation.
+The best practices and should be used as a reference point. Because operational requirements vary by organization, you should tailor and design a schedule that aligns with your specific infrastructure and business needs.
 
-We can create an inventory file or use the inventory file provided inside the tar file provided by the Red Hat Installer of containerized Ansible Automation Platform. 
+==  1. Capacity Planning
 
-Inside the Installer folder, you will have 2 different Inventory files that can be used for installation for different purposes. 
+Size appropriately based on your environment needs. Consider the following guidelines:
 
-. The default one named *inventory* is for the enterprise topology pattern. 	
-. If you want to deploy the growth or all-in-one pattern you need to copy over or use the *inventory-growth* file instead. 	
+|===
+| Environment Type | Managed Nodes | Topology | Resources per Node 
+| Development | <10 | All-in-one | 8 GB RAM, 2 CPU 
+| Test/QA | 10-50 | All-in-one | 16 GB RAM, 4 CPU 
+| Small Production | 50-250 | All-in-one or Small Enterprise | 16-32 GB RAM, 4-8 CPU 
+| Medium Production | 250-1000 | Enterprise | 32+ GB RAM, 8+ CPU 
+| Large Production | 1000+ | Enterprise with execution nodes | 64+ GB RAM, 16+ CPU 
+|===
 
-Both standalone and cluster systems are quite easy to set up. If there is only one hostname listed under the component name, it is a standalone configuration; if there are several hostnames listed under the single group name, it is a cluster setup. All you need to do is add the systems under the group name of the component you wish to install.
 
-[source,bash]
-For eg: 
-[automationgateway] ← This is a automationgateway group / component that will get installed 
-aap.example.org
+**Monitor resource usage**: Use the Metrics Service to track job execution patterns and monitor container resource consumption. Regularly review resource utilization trends to ensure the environment can handle current workloads and plan for future growth by adding execution nodes when additional capacity is required.
 
-The above will be a standalone setup. Once the installation script will run it will automatically take care of that. 
+== 2. High Availability
 
-[source,bash]
-For cluster eg:
-[automationgateway]
-aap1.example.org
-aap2.example.org
+For production environments requiring HA:
 
-The above is an example of cluster setup and there is no need to explicitly tell the script as it will take care of it automatically. This behavior is the same for different components apart from the database. 
+**Components to make highly available**:
+1. **Platform Gateway**: Multiple gateway nodes behind a load balancer
+2. **Automation Controller**: Multiple controller nodes
+3. **Database**: PostgreSQL clustering (primary + replicas)
+4. **Automation Hub**: Multiple hub nodes with shared storage
+5. **Execution Nodes**: Multiple nodes in a receptor mesh
 
-The Containerized installation offers two types of deployment topologies from which to choose: 
+**Example HA architecture**:
 
-. *Enterprise topology pattern*: This means that all the components will be installed on different systems for better performance and stability. The Design of the architecture looks like the one below where each component is installed on different servers and the drawn lines show how the components are interacting with each other and on which port the communication is happening. 
-+
-image::4.1.png[]
-+
-*Enterprise topology* is appropriate for infrastructure that needs: 
+- 2x Platform Gateway nodes (behind HAProxy load balancer)
+- 2x Automation Controller nodes
+- 1x PostgreSQL primary + 2x replicas
+- 2x Automation Hub nodes (with NFS shared storage)
+- 3+ Execution nodes
 
-.. Lightweight deployment, smaller footprints.
-.. Suitable for scaling or adding mesh.
-.. Designed for deployment with redundancy/HA or higher computing for big volumes of automation.
-+
-The benefits of using this topology: 
+> **Pro Tip**: For true HA, ensure no single point of failure exists in your design!
 
- .. Protected from the underlying OS changes and system dependencies. 
- .. Isolated from other applications and are more secure.
- .. Simplified upgrades
+== 3. Backup and Disaster Recovery
 
-. *All-in-one pattern*: In this, we will be installing all the components in a single system to create a testing environment or POC to understand the working. In this, we are going to do *All-in-one* pattern deployment.
-+
-image::4.2.png[]
-+
-The above will be deployed on a single system itself where 8433 will be the port for the *Unified UI* to be accessed. 
+**What to back up**: Ensure that all critical components of the Ansible Automation Platform are included in your backup strategy. This includes PostgreSQL databases for Controller, Automation Hub, and Event-Driven Ansible (EDA), Automation Hub content storage, TLS certificates and keys, inventory files, and any custom configurations required to restore the environment and maintain operational consistency.
 
-+
-*All-in-one pattern* is suitable for infrastructure according to the below needs: 
+**Backup frequency**:
 
-+
-.. Intended for organizations that are getting started with Ansible Automation Platform.
-.. All-in-one deployment on a single system reduces infrastructure costs. 
-.. Not ideal for scaling or adding mesh.
-.. Suitable for small test environments.
+- Databases: Daily minimum, hourly for critical environments
+- Configurations: After every change
+- Automation Hub content: After publishing new content
 
-+
-The benefits of using this topology: 
+**Backup methods**:
 
-- Protected from the underlying OS changes and system dependencies. 
-- Easy to Deploy and manage. 
+**Database backup example**:
+```bash
+# Taking backup using installer scripts provided by Red Hat
+$ ansible-playbook -i <path_to_inventory> ansible.containerized_installer.backup
+```
 
+**Database restore example**:
+```bash
+# Restore hub database installer scripts provided by Red Hat
+$ ansible-playbook -i <path_to_inventory> ansible.containerized_installer.restore
+```
+
+**Test your backups regularly!**:
+
+- Perform quarterly restore tests
+- Document restore procedures
+- Verify data integrity after restore
+
+== 4. Maintenance Windows
+
+**Regular maintenance tasks**:
+
+- **Weekly Tasks**: Review failed automation jobs, monitor system disk space usage, and track database size growth to prevent sudden operational disruptions.
+
+- **Monthly Tasks**: Purge old job history via auto-cleanup, update execution environment container images, and review and rotate application logs.
+
+- **Quarterly Tasks**: Apply AAP updates and patches, rotate credentials, audit user access permissions, and test disaster recovery procedures.
+
+- **Annual Tasks**: Plan major platform version upgrades, re-evaluate infrastructure architecture, and conduct a long-term capacity planning review.
