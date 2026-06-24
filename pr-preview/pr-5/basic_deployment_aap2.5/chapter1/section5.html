@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Security Best Practices :: Product Enablement: AAP 2.7 Fundamentals and Deployment</title>
+    <link rel="prev" href="section4.html">
+    <link rel="next" href="section6.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../..">Product Enablement: AAP 2.7 Fundamentals and Deployment</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/RedHatQuickCourses/basic_deployment_aap2.5/issues" target="_blank">Report Issues</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="basic_deployment_aap2.5" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Product Enablement: AAP 2.7 Fundamentals and Containerized Deployment</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../LABENV/index.html">Lab Environment</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Introduction to Deployment</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="network.html">Understand the Network Port and Protocols</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section1.html">Components of AAP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section2.html">Architecture Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section3.html">Containerized vs Operator Deployment</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section4.html">Deployment Best Practices</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="section5.html">Security Best Practices</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section6.html">Operational Best Practices</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section7.html">Summary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../chapter2/index.html">Ansible Automation Platform 2.7 Installation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../chapter2/section1.html">Containerized Installation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../chapter2/section2.html">Containerized Installation LAB</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../appendix/appendix.html">Appendix</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Product Enablement: AAP 2.7 Fundamentals and Containerized Deployment</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Product Enablement: AAP 2.7 Fundamentals and Containerized Deployment</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Product Enablement: AAP 2.7 Fundamentals and Containerized Deployment</a></li>
+    <li><a href="index.html">Introduction to Deployment</a></li>
+    <li><a href="section5.html">Security Best Practices</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Security Best Practices</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>let&#8217;s discuss how to use it effectively and securely. However, the best practices and should be used as a reference point. Because operational requirements vary by organization, you should tailor and design a schedule that aligns with your specific infrastructure and business needs.
+== Credential Management</p>
+</div>
+<div class="paragraph">
+<p>Proper credential management is essential for securing your Ansible Automation Platform environment. Protect sensitive information, follow password management best practices, and grant only the minimum permissions required for users and services.</p>
+</div>
+<div class="paragraph">
+<p><strong>Do&#8217;s</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>✅ Use Ansible Vault to store sensitive variables in inventory files.</p>
+</li>
+<li>
+<p>✅ Rotate passwords regularly, preferably every 90 days or according to your organization&#8217;s policy.</p>
+</li>
+<li>
+<p>✅ Use unique passwords for each platform component.</p>
+</li>
+<li>
+<p>✅ Store credentials in AAP Credential Management instead of embedding them in playbooks.</p>
+</li>
+<li>
+<p>✅ Use SSH keys rather than passwords for managed nodes whenever possible.</p>
+</li>
+<li>
+<p>✅ Follow the principle of least privilege and grant only the required level of access.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Don&#8217;ts</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>❌ Store passwords in plain-text playbooks or configuration files.</p>
+</li>
+<li>
+<p>❌ Share administrator credentials among team members.</p>
+</li>
+<li>
+<p>❌ Reuse the same password across multiple components.</p>
+</li>
+<li>
+<p>❌ Commit inventory files containing credentials to version control systems.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Example: Using Ansible Vault</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"># Create a vault file for sensitive variables
+ansible-vault create vault.yml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Add your passwords:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">---
+gateway_admin_password: "SecurePassword123!"
+controller_admin_password: "AnotherSecurePass456!"
+hub_admin_password: "YetAnotherPass789!"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Use it during installation</strong>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ansible-playbook -i inventory -e @vault.yml --ask-vault-pass \
+    ansible.containerized_installer.install</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_network_security"><a class="anchor" href="#_network_security"></a>Network Security</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A properly configured firewall helps protect the Ansible Automation Platform by limiting access to only the services and users that require it. Review network access regularly and ensure that only necessary communication paths are allowed.</p>
+</div>
+<div class="paragraph">
+<p><strong>Firewall Configuration</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Only open the ports required for your deployment topology.</p>
+</li>
+<li>
+<p>Restrict access to trusted source IP addresses or networks whenever possible.</p>
+</li>
+<li>
+<p>Use firewalld or iptables to manage and maintain firewall rules.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Example firewall configuration</strong>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"># Allow HTTPS from your corporate network only
+sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" \
+    source address="17.0.0.0/8" port protocol="tcp" port="443" accept'
+
+# Reload firewall
+sudo firewall-cmd --reload</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>TLS/SSL Configuration</strong>:</p>
+</div>
+<div class="paragraph">
+<p>Secure all production deployments with HTTPS to protect data in transit and prevent unauthorized access. Use certificates issued by a trusted Certificate Authority (CA), disable outdated TLS versions, and enforce modern encryption standards.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Always use HTTPS in production environments; avoid using HTTP.</p>
+</li>
+<li>
+<p>Use certificates from a trusted CA.</p>
+</li>
+<li>
+<p>Disable legacy TLS versions and use TLS 1.2 or later, with TLS 1.3 preferred.</p>
+</li>
+<li>
+<p>Enable HTTP Strict Transport Security (HSTS) to enforce secure connections.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Database Security</strong>:</p>
+</div>
+<div class="paragraph">
+<p>Protect the PostgreSQL databases that support the platform by implementing strong authentication, limiting network access, and securing data both in transit and at rest.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Use strong passwords for all PostgreSQL accounts.</p>
+</li>
+<li>
+<p>Restrict database access to Ansible Automation Platform hosts only.</p>
+</li>
+<li>
+<p>Enable SSL for database connections, especially when using remote databases.</p>
+</li>
+<li>
+<p>Perform regular encrypted backups to support recovery and data protection.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_3_access_control"><a class="anchor" href="#_3_access_control"></a>3. Access Control</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Role-Based Access Control (RBAC)</strong>:
+- Create teams for different groups (developers, operators, auditors)
+- Assign roles with least privilege
+  - <strong>System Administrator</strong>: Full access (only for platform admins)
+  - <strong>System Auditor</strong>: Read-only access (for compliance/auditing)
+  - <strong>Organization Admin</strong>: Full access within their organization
+  - <strong>Project Admin</strong>: Manage specific projects only</p>
+</div>
+<div class="paragraph">
+<p><strong>Example RBAC structure</strong>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">Organization: Production
+├── Team: Web Admins
+│   └── Role: Admin on "Web Servers" inventory
+├── Team: Database Admins
+│   └── Role: Admin on "Database Servers" inventory
+└── Team: Auditors
+    └── Role: Auditor on entire organization</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_4_audit_logging"><a class="anchor" href="#_4_audit_logging"></a>4. Audit Logging</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Enable and monitor audit logs:</p>
+</div>
+<div class="paragraph">
+<p><strong>What to monitor</strong>:
+- Login attempts (successful and failed)
+- Credential usage
+- Job launches
+- Configuration changes
+- User and permission changes</p>
+</div>
+<div class="paragraph">
+<p><strong>Integrate with SIEM</strong>:
+Send AAP logs to your Security Information and Event Management system for centralized monitoring and alerting on suspicious activity.</p>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="section4.html">Deployment Best Practices</a></span>
+  <span class="next"><a href="section6.html">Operational Best Practices</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img src="../../_/img/rhl-logo-red.png" height="40px" alt="Red Hat"  href="https://redhat.com" >
+</footer><script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
