@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Containerized vs Operator Deployment :: Product Enablement: AAP 2.7 Fundamentals and Deployment</title>
+    <link rel="prev" href="section2.html">
+    <link rel="next" href="section4.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../..">Product Enablement: AAP 2.7 Fundamentals and Deployment</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/RedHatQuickCourses/basic_deployment_aap2.5/issues" target="_blank">Report Issues</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="basic_deployment_aap2.5" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Product Enablement: AAP 2.7 Fundamentals and Containerized Deployment</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../LABENV/index.html">Lab Environment</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Introduction to Deployment</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="network.html">Understand the Network Port and Protocols</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section1.html">Components of AAP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section2.html">Architecture Overview</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="section3.html">Containerized vs Operator Deployment</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section4.html">Deployment Best Practices</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section5.html">Security Best Practices</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section6.html">Operational Best Practices</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section7.html">Summary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../chapter2/index.html">Ansible Automation Platform 2.7 Installation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../chapter2/section1.html">Containerized Installation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../chapter2/section2.html">Containerized Installation LAB</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../chapter2/section4.html">Operator Deployment LAB</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../chapter2/section5.html">section5.adoc</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../appendix/appendix.html">Appendix</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Product Enablement: AAP 2.7 Fundamentals and Containerized Deployment</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Product Enablement: AAP 2.7 Fundamentals and Containerized Deployment</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Product Enablement: AAP 2.7 Fundamentals and Containerized Deployment</a></li>
+    <li><a href="index.html">Introduction to Deployment</a></li>
+    <li><a href="section3.html">Containerized vs Operator Deployment</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Containerized vs Operator Deployment</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>AAP 2.7 offers two deployment methods. Understanding when to use each is important:</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_containerized_installer_rhel_based"><a class="anchor" href="#_containerized_installer_rhel_based"></a>Containerized Installer (RHEL-based)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>What it is</strong>: Ansible role that deploys AAP as Podman containers on RHEL hosts</p>
+</div>
+<div class="paragraph">
+<p><strong>When to use</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>RHEL-based infrastructure</p>
+</li>
+<li>
+<p>You want full control over the infrastructure</p>
+</li>
+<li>
+<p>You&#8217;re comfortable managing RHEL systems</p>
+</li>
+<li>
+<p>You need disconnected/air-gapped installations</p>
+</li>
+<li>
+<p>Existing infrastructure automation with Ansible</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Characteristics</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Deployment: Using containers for each component.</p>
+</li>
+<li>
+<p>Configuration: Manual inventory file edits</p>
+</li>
+<li>
+<p>Management: Podman with systemd units</p>
+</li>
+<li>
+<p>Network: Manual firewall rules</p>
+</li>
+<li>
+<p>Upgrades: Re-run installer with updated inventory</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Management complexity</strong>: Medium to High</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_operator_based_openshift"><a class="anchor" href="#_operator_based_openshift"></a>Operator-based (OpenShift)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>What it is</strong>: Kubernetes operator managing AAP on OpenShift Container Platform</p>
+</div>
+<div class="paragraph">
+<p><strong>When to use</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>OpenShift infrastructure</p>
+</li>
+<li>
+<p>You want simplified configuration</p>
+</li>
+<li>
+<p>You prefer cloud-native operations</p>
+</li>
+<li>
+<p>You need automatic failover</p>
+</li>
+<li>
+<p>You have OpenShift expertise</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Characteristics</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Deployment: Kubernetes operator</p>
+</li>
+<li>
+<p>Configuration: Single CR (Custom Resource) field</p>
+</li>
+<li>
+<p>Management: Kubernetes deployments managed by operator</p>
+</li>
+<li>
+<p>Network: Automatic Kubernetes services and routes</p>
+</li>
+<li>
+<p>Upgrades: Operator handles upgrades automatically</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Management complexity</strong>: Low (if you know Kubernetes/OpenShift)</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Comparison Table:</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Aspect</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Containerized Installer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Operator (OpenShift)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Platform</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RHEL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OpenShift</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deployment method</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ansible role</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kubernetes operator</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Configuration complexity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Manual inventory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Single CR field</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Database provisioning</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Administrator provisions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Operator auto-provisions</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Container management</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Podman with systemd</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kubernetes deployments</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Network configuration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Manual firewall/ports</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Automatic K8s services</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OAuth integration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Manual</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Automatic with platform gateway</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Upgrades</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Re-run installer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Operator handles via CR updates</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Backup/restore</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Manual playbook</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Operator-managed CR</p></td>
+</tr>
+</tbody>
+</table>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Pro Tip</strong>: Choose based on your existing infrastructure. If you&#8217;re already using RHEL, containerized installer integrates smoothly. If you&#8217;re on OpenShift, the operator simplifies operations significantly.</p>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="section2.html">Architecture Overview</a></span>
+  <span class="next"><a href="section4.html">Deployment Best Practices</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img src="../../_/img/rhl-logo-red.png" height="40px" alt="Red Hat"  href="https://redhat.com" >
+</footer><script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
