@@ -97,10 +97,13 @@
     <a class="nav-link" href="../chapter2/section2.html">Containerized Installation LAB</a>
   </li>
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../chapter2/section3.html">Operator Installation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../chapter2/section4.html">Operator Deployment LAB</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../chapter2/section5.html">section5.adoc</a>
+    <a class="nav-link" href="../chapter2/section5.html">Chapter 2 Summary</a>
   </li>
 </ul>
   </li>
@@ -155,66 +158,39 @@
 <p><strong>Ansible Core</strong>: It includes the Ansible language and runtime, a set of built-in modules and command-line tools, and a framework for extending automation with collections.</p>
 </div>
 <div class="paragraph">
-<p><strong>Unified UI</strong>: Ansible Automation Platform is a modular platform. The Unified UI gives you access to all the ansible automation platform components, such as automation controller, automation hub, Automation Analytics and Event-Driven Ansible controller.</p>
+<p><strong>Unified UI</strong>: Ansible Automation Platform is a modular platform. The Unified UI gives you access to all Ansible Automation Platform components, such as Automation Controller, Automation Hub, Automation Analytics, and Event-Driven Ansible.</p>
 </div>
 <div class="paragraph">
-<p><strong>Automation controller / Automation execution</strong>: The Automation controller is the command and control center for Red Hat® Ansible® Automation Platform. It includes a webUI, API, <a href="https://www.redhat.com/en/topics/security/what-is-role-based-access-control" target="_blank" rel="noopener">role-based access control (RBAC)</a>, a workflow visualizer, and continuous integration and continuous delivery (CI/CD) integrations to help you organize and manage automation across your enterprise.</p>
+<p><strong>Automation Controller / Automation Execution</strong>: The Automation Controller is the command and control center for Red Hat® Ansible® Automation Platform. It includes a web UI, API, <a href="https://www.redhat.com/en/topics/security/what-is-role-based-access-control" target="_blank" rel="noopener">role-based access control (RBAC)</a>, a workflow visualizer, and continuous integration and continuous delivery (CI/CD) integrations to help you organize and manage automation across your enterprise.</p>
 </div>
 <div class="paragraph">
-<p>Automation controller brings a systematic approach to automation with Ansible Automation Platform. Standardizing how automation is deployed, initiated, delegated, and audited, allows enterprises to automate with confidence, while reducing sprawl and variance across IT environments.
-It is now integrated into the Automation Unified UI with the name  Automation execution.</p>
+<p>Automation Controller brings a systematic approach to automation with Ansible Automation Platform. Standardizing how automation is deployed, initiated, delegated, and audited allows enterprises to automate with confidence while reducing sprawl and variance across IT environments.
+It is now integrated into the Automation Unified UI with the name Automation Execution.</p>
 </div>
 <div class="paragraph">
-<p><strong>Automation hub / Automation content</strong>: Ansible automation hub is a central repository to discover, download, and manage <a href="https://www.ansible.com/products/content-collections" target="_blank" rel="noopener">Ansible Content Collections</a> bundles of <a href="https://www.redhat.com/en/topics/automation/what-is-an-ansible-module" target="_blank" rel="noopener">modules</a>, plug-ins, <a href="https://www.redhat.com/en/topics/automation/what-is-an-ansible-role" target="_blank" rel="noopener">roles</a>, and documentation from Red Hat and our partners. Included with your Red Hat® Ansible Automation Platform subscription, the Ansible Content Collections found in the Automation hub helps teams automate new projects faster.</p>
+<p><strong>Automation Hub / Automation Content</strong>: Ansible Automation Hub is a central repository to discover, download, and manage <a href="https://www.ansible.com/products/content-collections" target="_blank" rel="noopener">Ansible Content Collections</a> bundles of <a href="https://www.redhat.com/en/topics/automation/what-is-an-ansible-module" target="_blank" rel="noopener">modules</a>, plug-ins, <a href="https://www.redhat.com/en/topics/automation/what-is-an-ansible-role" target="_blank" rel="noopener">roles</a>, and documentation from Red Hat and our partners. Included with your Red Hat® Ansible Automation Platform subscription, the Ansible Content Collections found in Automation Hub help teams automate new projects faster.</p>
 </div>
 <div class="paragraph">
-<p><a href="https://www.redhat.com/sysadmin/get-started-private-automation-hub" target="_blank" rel="noopener">Private automation hub</a> is an on-premise repository that allows enterprises with disconnected environments to manage, share, and curate content generated internally and control access to Red Hat and partner-created content.</p>
+<p><a href="https://www.redhat.com/sysadmin/get-started-private-automation-hub" target="_blank" rel="noopener">Private Automation Hub</a> is an on-premise repository that allows enterprises with disconnected environments to manage, share, and curate content generated internally and control access to Red Hat and partner-created content.</p>
 </div>
 <div class="paragraph">
-<p><strong>Automation EDA  / Automation decisions</strong>: Event-driven Ansible provides the event-handling capability needed to automate time-consuming tasks and respond to changing conditions in any IT domain.
+<p><strong>Automation EDA / Automation Decisions</strong>: Event-Driven Ansible provides the event-handling capability needed to automate time-consuming tasks and respond to changing conditions in any IT domain.
 Event-driven Ansible can process events containing discrete intelligence about conditions in the IT environment, determine the appropriate response to the event, and then execute automated actions to address or remediate the event. It can help you get more out of existing tools by using their observability data to automate actions at every stage of the operational life cycle.</p>
 </div>
 <div class="paragraph">
-<p><strong>Execution nodes</strong>: These are the worker nodes for the automation Controller  as  it is used to execute the playbook and send the status updates back to the automation controller related to the job run. They don&#8217;t have the GUI like Automation Controller but are connected to the controller to extend its execution capabilities. It helps to obtain the global scaling capabilities of the Ansible Automation Platform. These can be defined as  node_type=execution while doing the deployment.</p>
+<p><strong>Execution nodes</strong>: Execution nodes execute playbooks and relay status updates to the Automation Controller. They extend the Controller&#8217;s execution capacity without providing a graphical interface, and connect to the Controller through the automation mesh to enable global scaling. These are defined as <code>node_type=execution</code> in the inventory file during deployment.</p>
 </div>
 <div class="paragraph">
 <p><strong>Hop Nodes</strong>: When an organization wishes to have a network that is isolated and does not want to expose its Execution node to the internet, the Hop nodes serve as a connection passthrough proxy. These can be specified as node_type=hop when AAP is being installed.</p>
 </div>
 <div class="paragraph">
-<p><strong>Database</strong>:  Every application, such as the automation controller and automation hub, has its own unique database created inside the Postgres database, which is used in the background to store the application&#8217;s data. The Postgres database has a public schema by default, but it can be modified based on the needs of the application.</p>
+<p><strong>Database</strong>: Every application, such as the Automation Controller and Automation Hub, has its own unique database created inside the PostgreSQL database, which is used in the background to store the application&#8217;s data. PostgreSQL uses a public schema by default, but it can be modified based on the needs of the application.</p>
 </div>
 <div class="paragraph">
 <p><strong>Redis</strong>: Redis is a high-performance, in-memory data store commonly used as a cache, database, and message broker. It provides versatility for a range of use scenarios by supporting many data structures, including strings, hashes, lists, sets, and more. Redis is perfect for real-time applications that need quick access to data because of its sub-millisecond response times.</p>
 </div>
 <div class="paragraph">
 <p><strong>Automation Mesh</strong>: Automation mesh primarily supports peer-to-peer network connectivity between the controller nodes and the execution/hop nodes through the utilization of a service known as a receptor. It maintains the connection and helps the Controller node to get updates from the worker node or to assign the work to the worker nodes.</p>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p><strong>Important Password Security</strong>:</p>
-</div>
-</blockquote>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="ulist">
-<ul>
-<li>
-<p>Use strong, unique passwords for each component</p>
-</li>
-<li>
-<p>Do NOT use special characters like <code>,</code>, <code>"</code>, or <code>@</code> in passwords (they can break the installer)</p>
-</li>
-<li>
-<p>Supported special characters: <code>!</code>, <code>#</code>, <code>$</code>, <code>%</code>, and <code>&amp;</code></p>
-</li>
-<li>
-<p>Store this inventory file securely – it contains sensitive credentials!</p>
-</li>
-</ul>
-</div>
-</blockquote>
 </div>
 <nav class="pagination">
   <span class="prev"><a href="network.html">Understand the Network Port and Protocols</a></span>

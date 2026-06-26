@@ -97,10 +97,13 @@
     <a class="nav-link" href="section2.html">Containerized Installation LAB</a>
   </li>
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="section3.html">Operator Installation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="section4.html">Operator Deployment LAB</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="section5.html">section5.adoc</a>
+    <a class="nav-link" href="section5.html">Chapter 2 Summary</a>
   </li>
 </ul>
   </li>
@@ -211,13 +214,13 @@ aap2.example.org</code></pre>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Lightweight deployment, smaller footprints.</p>
+<p>Higher computing capacity for large volumes of automation.</p>
 </li>
 <li>
-<p>Suitable for scaling or adding mesh.</p>
+<p>Redundancy and high availability across platform components.</p>
 </li>
 <li>
-<p>Designed for deployment with redundancy/HA or higher computing for big volumes of automation.</p>
+<p>Scalable automation mesh for managing distributed environments.</p>
 <div class="paragraph">
 <p>The benefits of using this topology:</p>
 </div>
@@ -236,12 +239,19 @@ aap2.example.org</code></pre>
 </li>
 </ol>
 </div>
-<div class="quoteblock">
-<blockquote>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
 <div class="paragraph">
-<p><strong>Important</strong>: For production, Red Hat recommends enterprise topology with external database for performance and availability.</p>
+<p>For production, Red Hat recommends enterprise topology with an external database for performance and availability.</p>
 </div>
-</blockquote>
+</td>
+</tr>
+</table>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -253,7 +263,7 @@ aap2.example.org</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The above will be deployed on a single system itself where 8433 will be the port for the <strong>Unified UI</strong> to be accessed.</p>
+<p>The above will be deployed on a single system itself where 8443 will be the port for the <strong>Unified UI</strong> to be accessed.</p>
 </div>
 <div class="paragraph">
 <p><strong>All-in-one pattern</strong> is suitable for infrastructure according to the below needs:</p>
@@ -271,9 +281,12 @@ aap2.example.org</code></pre>
 </li>
 <li>
 <p>Suitable for small test environments.</p>
-<div class="paragraph">
-<p>The benefits of using this topology:</p>
+</li>
+</ol>
 </div>
+</li>
+<li>
+<p>The benefits of using this topology:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -294,11 +307,8 @@ aap2.example.org</code></pre>
 </ul>
 </div>
 </li>
-</ol>
-</div>
-<div class="paragraph">
+<li>
 <p>Resource allocation example:</p>
-</div>
 <div class="ulist">
 <ul>
 <li>

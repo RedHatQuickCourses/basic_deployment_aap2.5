@@ -97,10 +97,13 @@
     <a class="nav-link" href="../chapter2/section2.html">Containerized Installation LAB</a>
   </li>
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../chapter2/section3.html">Operator Installation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../chapter2/section4.html">Operator Deployment LAB</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../chapter2/section5.html">section5.adoc</a>
+    <a class="nav-link" href="../chapter2/section5.html">Chapter 2 Summary</a>
   </li>
 </ul>
   </li>
@@ -150,15 +153,58 @@
 </aside>
 <article class="doc">
 <h1 class="page">Introduction to Deployment</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>Simplifying and scaling IT automation across various infrastructures is the goal of the robust, enterprise-grade Ansible Automation Platform (AAP). AAP streamlines processes like maintaining containerized environments, coordinating multi-cloud deployments, and guaranteeing uniformity across on-premise systems by centralizing the administration of automation workflows. A web-based interface, role-based access control for safe operations, and analytics to track automation performance are some of its strong points. In the current IT environment, implementing AAP is essential to helping your company expedite procedures, lower errors, and enhance operational efficiency.</p>
+<p>Red Hat Ansible Automation Platform (AAP) is an enterprise-grade automation solution designed to simplify and scale IT operations across diverse infrastructures. By centralizing the management of automation workflows, AAP enables organizations to maintain containerized environments, coordinate multi-cloud deployments, and enforce consistency across on-premise systems — all through a single, unified platform.</p>
+</div>
+<div class="paragraph">
+<p>AAP&#8217;s core strengths include a web-based unified interface, role-based access control (RBAC) for secure operations, event-driven automation for real-time responses, and built-in analytics to track performance. Whether you are deploying in an air-gapped RHEL environment or running a cloud-native workload on OpenShift, AAP provides the flexibility, security, and scalability required by modern enterprises.</p>
 </div>
 <div class="paragraph">
 <p>A pictorial demonstration shows the ways Ansible automation can be deployed:</p>
 </div>
-<div class="imageblock">
+<div class="imageblock unresolved">
 <div class="content">
-<img src="_images/1.png" alt="1">
+<img src="1.png" alt="1">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_you_will_learn"><a class="anchor" href="#_what_you_will_learn"></a>What You Will Learn</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This chapter provides a comprehensive foundation for understanding and deploying AAP 2.7. It covers the following topics:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Platform Components</strong> — Learn about the modular building blocks of AAP: Automation Controller, Automation Hub, Event-Driven Ansible, execution and hop nodes, and the supporting infrastructure (PostgreSQL, Redis, Automation Mesh).</p>
+</li>
+<li>
+<p><strong>Architecture Overview</strong> — Understand how a job moves through the platform, from user authentication at the Platform Gateway to execution inside a container on a worker node, including the new Metrics Service introduced for capacity planning.</p>
+</li>
+<li>
+<p><strong>Network Ports and Protocols</strong> — Review the required ports and default port assignments for each platform component to ensure proper firewall and network configuration.</p>
+</li>
+<li>
+<p><strong>Deployment Methods</strong> — Compare the two supported deployment models: the <strong>Containerized Installer</strong> (Podman on RHEL, suitable for air-gapped and full-control environments) and the <strong>Operator-based</strong> deployment (Kubernetes on OpenShift, for cloud-native, simplified operations).</p>
+</li>
+<li>
+<p><strong>On-Premise Installation</strong> — Explore the supported installation modes (RPM, Containerized, and Operator), understand tested topologies, and learn why the containerized approach is the recommended future direction.</p>
+</li>
+<li>
+<p><strong>Deployment Best Practices</strong> — Apply capacity-planning guidelines from development (8 GB RAM) to large production (64+ GB RAM), design high-availability architectures, and implement backup and regular maintenance routines.</p>
+</li>
+<li>
+<p><strong>Security Best Practices</strong> — Protect your deployment using Ansible Vault for secrets, RBAC with least privilege, TLS 1.2+ enforcement, firewall hardening, and audit log integration with SIEM systems.</p>
+</li>
+<li>
+<p><strong>Operational Best Practices</strong> — Organize resources by environment and team, manage automation content in Git with versioned Execution Environments, monitor with Prometheus and Grafana, and maintain thorough platform documentation.</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <nav class="pagination">

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Operator Deployment LAB :: Product Enablement: AAP 2.7 Fundamentals and Deployment</title>
-    <link rel="prev" href="section2.html">
+    <link rel="prev" href="section3.html">
     <link rel="next" href="section5.html">
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../_/css/site.css">
@@ -96,11 +96,14 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="section2.html">Containerized Installation LAB</a>
   </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="section3.html">Operator Installation</a>
+  </li>
   <li class="nav-item is-current-page" data-depth="1">
     <a class="nav-link" href="section4.html">Operator Deployment LAB</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="section5.html">section5.adoc</a>
+    <a class="nav-link" href="section5.html">Chapter 2 Summary</a>
   </li>
 </ul>
   </li>
@@ -153,50 +156,82 @@
 <div class="paragraph">
 <p>We will be using <strong>Product Enablement AAP Operator Deployment lab</strong> LAB for this deployment. Please be aware that setting up a Operator Lab will take about fifty minutes. Following that, you can proceed with the installation procedures:</p>
 </div>
-<div class="paragraph">
-<p>The following video will provide the step-by-step guide for installing the Ansible Automation Platform 2.5 operator:</p>
-</div>
-<div class="videoblock text-center">
-<div class="content">
-<video src="_images/operator_aap.mp4" width="800" height="500" controls>
-Your browser does not support the video tag.
-</video>
-</div>
-</div>
-<div class="paragraph">
-<p>All the followed steps in the video are shared below:</p>
-</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Log in to the Red Hat OpenShift Container Platform.</p>
+<p>Log in to the Red Hat OpenShift Container Platform using your credentials form the RHDP login page.</p>
 </li>
 <li>
-<p>Navigate to Operators OperatorHub.</p>
+<p>Navigate to Ecosystem Software Catalog and search for <strong>Ansible Automation Platform</strong>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/6.3.png" alt="6.3">
+</div>
+</div>
 </li>
 <li>
 <p>Search for <strong>Ansible Automation Platform</strong> and click <strong>Install</strong>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/6.4.png" alt="6.4">
+</div>
+</div>
 </li>
 <li>
-<p>Select a <strong>stable-2.5</strong>.</p>
+<p>Select a <strong>stable-2.7</strong>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/6.5.png" alt="6.5">
+</div>
+</div>
 </li>
 <li>
 <p>Select namespace as default which will be <strong>aap</strong>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/6.6.png" alt="6.6">
+</div>
+</div>
 </li>
 <li>
 <p>Click <strong>Install</strong>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/6.7.png" alt="6.7">
+</div>
+</div>
 </li>
 <li>
 <p>Go to <strong>Installed Operators</strong> and there you will see <strong>Ansible Automation Platform</strong> operator installed click on it.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/6.8.png" alt="6.8">
+</div>
+</div>
 </li>
 <li>
 <p>Select project as <strong>aap</strong> if it&#8217;s not aap.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/6.9.png" alt="6.9">
+</div>
+</div>
 </li>
 <li>
 <p>There scroll to the option <strong>Ansible Automation Platform</strong> and click on <strong>Create instance</strong> which will deploy all the components of <strong>AAP</strong>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/6.10.png" alt="6.10">
+</div>
+</div>
 </li>
 <li>
 <p>Provide the <strong>Name</strong> on which will be used to create the resources for that <strong>AAP</strong> like network routes,secrets.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/6.11.png" alt="6.11">
+</div>
+</div>
 <div class="literalblock">
 <div class="content">
 <pre>Note: There are many other options that we can customize according to the requirement but in this we will be taking care of very basic deployment.</pre>
@@ -204,13 +239,48 @@ Your browser does not support the video tag.
 </div>
 </li>
 <li>
-<p>Click on <strong>Create</strong> it will deploy the resournces which will take around 20 minutes.</p>
+<p>Click on <strong>Create</strong> it will deploy the resources which will take around 20 minutes.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/6.12.png" alt="6.12">
+</div>
+</div>
 </li>
 <li>
-<p>On openshift dashboard <strong>Click on</strong> Networking and then routes and click on the <strong>ansible</strong> route or the <strong>Name</strong> given in Step 10 above.</p>
+<p>On openshift dashboard <strong>Click on</strong> Networking and then routes and click on the <strong>ansible</strong> route or the <strong>Name</strong> given in Step 11 above.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/6.13.png" alt="6.13">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/6.14.png" alt="6.14">
+</div>
+</div>
 </li>
 <li>
 <p>On openshift dashboard go to <strong>Workloads</strong> and then <strong>Secrets</strong> and search for <strong>admin</strong> . click on it and copy the <strong>password</strong>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/6.15.png" alt="6.15">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/6.16.png" alt="6.16">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/6.17.png" alt="6.17">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/6.18.png" alt="6.18">
+</div>
+</div>
 </li>
 <li>
 <p>Provide the <strong>Red Hat login ID</strong> to get the subscription for attaching it to the AAP and <strong>60-day subscription to Red Hat Ansible® Automation Platform</strong> or <strong>Red Hat Developer Subscription for Individuals</strong> subscription can be used for this lab.</p>
@@ -221,8 +291,8 @@ Your browser does not support the video tag.
 </ol>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="section2.html">Containerized Installation LAB</a></span>
-  <span class="next"><a href="section5.html">section5.adoc</a></span>
+  <span class="prev"><a href="section3.html">Operator Installation</a></span>
+  <span class="next"><a href="section5.html">Chapter 2 Summary</a></span>
 </nav>
 </article>
   </div>

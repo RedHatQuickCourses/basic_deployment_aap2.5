@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Containerized Installation LAB :: Product Enablement: AAP 2.7 Fundamentals and Deployment</title>
     <link rel="prev" href="section1.html">
-    <link rel="next" href="section4.html">
+    <link rel="next" href="section3.html">
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../_/css/site.css">
     <script>var uiRootPath = '../../_'</script>
@@ -97,10 +97,13 @@
     <a class="nav-link" href="section2.html">Containerized Installation LAB</a>
   </li>
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="section3.html">Operator Installation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="section4.html">Operator Deployment LAB</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="section5.html">section5.adoc</a>
+    <a class="nav-link" href="section5.html">Chapter 2 Summary</a>
   </li>
 </ul>
   </li>
@@ -151,53 +154,130 @@
 <article class="doc">
 <h1 class="page">Containerized Installation LAB</h1>
 <div class="paragraph">
-<p>We will be using <strong>Product Enablement Containerized AAP 2.5</strong> LAB for this deployment. Please be aware that setting up a RHEL 9 system in this lab will take about ten minutes. Following that, you can proceed with the installation procedures:</p>
+<p>The following steps demonstrate how to install all AAP 2.7 components on a single system using the all-in-one pattern:</p>
 </div>
-<div class="paragraph">
-<p>The below video demonstrates the step to step guide to do the installation of all components on a single system itself:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>We are going to follow an All-in-one pattern approach for the setup.</p>
+</li>
+</ul>
 </div>
-<div class="videoblock text-left">
+<div class="imageblock">
 <div class="content">
-<video src="_images/container_aap_lab.mp4" width="800" height="500" controls>
-Your browser does not support the video tag.
-</video>
+<img src="_images/4.2.png" alt="4.2">
 </div>
-</div>
-<div class="paragraph">
-<p>all the above steps followed in the video are shared below:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>We are going to follow an All-in-one pattern approach for the setup.</p>
+<p><strong>OpenShift Console Access:</strong></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Navigate to <strong>Virtualization</strong> → <strong>VirtualMachines</strong></p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/5.1.png" alt="5.1">
+<img src="_images/4.3.png" alt="4.3">
 </div>
 </div>
 </li>
 <li>
-<p>Once the lab is deployed and you are accessing the system via <strong>ssh</strong> terminal make sure to run everything as a normal user only and use the sudo command to perform any root-level operations.</p>
+<p>Select namespace: <code>aap-lab</code></p>
+</li>
+<li>
+<p>Click on <code>aap-lab-rhel10</code></p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/4.4.png" alt="4.4">
+</div>
+</div>
+</li>
+<li>
+<p>Click on the <strong>Open Web Console</strong> button.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/4.5.png" alt="4.5">
+</div>
+</div>
+</li>
+<li>
+<p>Use the <strong>Serial</strong> tab for terminal access.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/4.6.png" alt="4.6">
+</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Copy the username and password from the task bar and use CTRL+SHIFT+V to paste the credentials in the terminal. to access the system.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/4.7.png" alt="4.7">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/4.8.png" alt="4.8">
+</div>
+</div>
+</li>
+<li>
+<p>Register the system with Red Hat Subscription Management and attach the subscription to the system.</p>
+<div class="listingblock execute">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo subscription-manager register</code></pre>
+</div>
+</div>
+<div class="listingblock execute">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">username: &lt;YOUR-RHN_LOGIN&gt;
+password: &lt;YOUR-RHN_PASSWORD&gt;</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/4.9.png" alt="4.9">
+</div>
+</div>
 </li>
 <li>
 <p>Install the required and useful utilities:</p>
 <div class="listingblock execute">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"> $ sudo dnf install -y wget git-core rsync vim ansible-core</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo dnf install -y wget git-core rsync vim ansible-core</code></pre>
 </div>
 </div>
 </li>
 <li>
-<p>Go to the <a href="https://access.redhat.com/downloads/content/480/ver=2.5/rhel---9/2.5/x86_64/product-software" target="_blank" rel="noopener">Installer</a> link and Get the installer link for <strong>Ansible Automation Platform 2.5 Containerized Setup Bundle</strong>.</p>
+<p>Go to the <a href="https://access.redhat.com/downloads/content/480/ver=2.7/rhel---10/2.7/x86_64/product-software" target="_blank" rel="noopener">Installer</a> link and Get the installer link for <strong>Ansible Automation Platform 2.7 Containerized Setup Bundle</strong> for RHEL 10.</p>
 <div class="paragraph">
-<p>Note: Please follow steps 4 and 5 one after another in order to avoid the link expiration error, as the copied URL has an expiration time. Reload the website, repeat step 4, and copy the link if you are having trouble.</p>
+<p>Note: Please follow steps 5 and 6 one after another in order to avoid the link expiration error, as the copied URL has an expiration time. Reload the website, repeat step 5, and copy the link if you are having trouble.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/4.10.png" alt="4.10">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/4.11.png" alt="4.11">
+</div>
 </div>
 </li>
 <li>
 <p>Download the installer file to the VM:</p>
 <div class="listingblock execute">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ wget -O aap.tar.gz "&lt;paste-link-here taken from step 4&gt;"</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">wget -O aap.tar.gz "&lt;paste-link-here taken from step 5&gt;"</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/4.12.png" alt="4.12">
 </div>
 </div>
 </li>
@@ -205,7 +285,7 @@ Your browser does not support the video tag.
 <p>Extract the <strong>aap.tar.gz</strong> file using the following command:</p>
 <div class="listingblock execute">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ tar -xvf aap.tar.gz</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">tar -xvf aap.tar.gz</code></pre>
 </div>
 </div>
 </li>
@@ -213,16 +293,50 @@ Your browser does not support the video tag.
 <p>Get the hostname from the system and copy it.</p>
 <div class="listingblock execute">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ hostname</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">hostname -f</code></pre>
 </div>
 </div>
 </li>
+</ol>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><strong>Password security guidelines</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Use strong, unique passwords for each component.</p>
+</li>
+<li>
+<p>Do NOT use special characters like <code>,</code>, <code>"</code>, or <code>@</code> in passwords — they can break the installer.</p>
+</li>
+<li>
+<p>Supported special characters: <code>!</code>, <code>#</code>, <code>$</code>, <code>%</code>, and <code>&amp;</code>.</p>
+</li>
+<li>
+<p>Store the inventory file securely after installation — it contains sensitive credentials.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>Using the <strong>cd</strong> command, enter the extracted folder. Then, use the <strong>vim</strong> command, open the <strong>inventory-growth</strong> file and make the following changes, wherever they appear throughout the entire <strong>inventory-growth</strong> file:</p>
 <div class="listingblock execute">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ cd &lt;extracted-folder-from-step-6&gt;
-$ vim inventory-growth
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"> cd &lt;extracted-folder-from-step-6&gt;
+ vim inventory-growth
 aap.example.org → &lt; paste system hostname&gt;
 &lt;set your own&gt; → redhat
 
@@ -230,28 +344,91 @@ aap.example.org → &lt; paste system hostname&gt;
 </div>
 </div>
 <div class="paragraph">
-<p>Note: Please click this link to learn how to use <a href="https://www.geeksforgeeks.org/basic-vim-commands/" target="_blank" rel="noopener">Vim basic operations</a>.</p>
+<p>To replace all occurrences at once, use vim&#8217;s global substitute command instead of editing each line manually. While in vim, type the following in <strong>command mode</strong> (press <strong>Esc</strong> first):</p>
+</div>
+<div class="listingblock execute">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"># Replace every occurrence of aap.example.org with your actual hostname
+:%s/aap.example.org/&lt;your-hostname&gt;/g
+
+# Replace every occurrence of &lt;set your own&gt; with your chosen password
+:%s/&lt;set your own&gt;/redhat/g</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>:%s</code> — runs the substitution across <strong>all lines</strong> in the file.</p>
+</li>
+<li>
+<p><code>/g</code> — replaces <strong>every match on a line</strong>, not just the first.</p>
+</li>
+<li>
+<p>After running both commands, type <strong><code>:wq</code></strong> and press <strong>Enter</strong> to save and quit.</p>
+</li>
+<li>
+<p>If you chose a different password instead of <code>redhat</code>, use that value in the second command. Use the same password when logging in after deployment.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Click this link to learn how to use <a href="https://www.geeksforgeeks.org/basic-vim-commands/" target="_blank" rel="noopener">Vim basic operations</a>.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </li>
 <li>
 <p>Once the inventory file is ready follow the below steps to do the installation:</p>
 <div class="listingblock execute">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ ansible-playbook -i inventory-growth ansible.containerized_installer.install</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ansible-playbook -i inventory-growth ansible.containerized_installer.install</code></pre>
 </div>
 </div>
 </li>
 <li>
-<p>Simply use the hostname from the lab deployment login page and try to access the URL from the browser on the port <strong>443</strong>.</p>
+<p>Simply go to the RHDP login page from the lab deployment and access the AAP web interface.</p>
 </li>
 <li>
-<p>Use the user <strong>admin</strong> and the <strong>password</strong> set during the time of installation. In the above video I set it to <strong>redhat</strong>.</p>
-<div class="literalblock">
-<div class="content">
-<pre>Note: Try to use stronger password while doing the enterprise deployment</pre>
-</div>
-</div>
+<p>Use the user <strong>admin</strong> and the <strong>password</strong> set during the time of installation. The example above uses <code>redhat</code> as the password.</p>
 </li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Use a stronger password for enterprise deployments.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>Provide the <strong>Red Hat login ID</strong> to get the subscription for attaching it to the AAP and <strong>60-day subscription to Red Hat Ansible® Automation Platform</strong> or <strong>Red Hat Developer Subscription for Individuals</strong> subscription can be used for this lab.</p>
 </li>
@@ -262,7 +439,7 @@ aap.example.org → &lt; paste system hostname&gt;
 </div>
 <nav class="pagination">
   <span class="prev"><a href="section1.html">Containerized Installation</a></span>
-  <span class="next"><a href="section4.html">Operator Deployment LAB</a></span>
+  <span class="next"><a href="section3.html">Operator Installation</a></span>
 </nav>
 </article>
   </div>

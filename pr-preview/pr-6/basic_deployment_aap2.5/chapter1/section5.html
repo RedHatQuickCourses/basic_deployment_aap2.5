@@ -97,10 +97,13 @@
     <a class="nav-link" href="../chapter2/section2.html">Containerized Installation LAB</a>
   </li>
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../chapter2/section3.html">Operator Installation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../chapter2/section4.html">Operator Deployment LAB</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../chapter2/section5.html">section5.adoc</a>
+    <a class="nav-link" href="../chapter2/section5.html">Chapter 2 Summary</a>
   </li>
 </ul>
   </li>
@@ -154,9 +157,13 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>let&#8217;s discuss how to use it effectively and securely. However, the best practices and should be used as a reference point. Because operational requirements vary by organization, you should tailor and design a schedule that aligns with your specific infrastructure and business needs.
-== Credential Management</p>
+<p>This section covers how to use AAP effectively and securely. These best practices should be used as a reference point. Because operational requirements vary by organization, you should tailor and design a schedule that aligns with your specific infrastructure and business needs.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_1_credential_management"><a class="anchor" href="#_1_credential_management"></a>1. Credential Management</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Proper credential management is essential for securing your Ansible Automation Platform environment. Protect sensitive information, follow password management best practices, and grant only the minimum permissions required for users and services.</p>
 </div>
@@ -236,7 +243,7 @@ hub_admin_password: "YetAnotherPass789!"</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_network_security"><a class="anchor" href="#_network_security"></a>Network Security</h2>
+<h2 id="_2_network_security"><a class="anchor" href="#_2_network_security"></a>2. Network Security</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>A properly configured firewall helps protect the Ansible Automation Platform by limiting access to only the services and users that require it. Review network access regularly and ensure that only necessary communication paths are allowed.</p>
@@ -264,7 +271,7 @@ hub_admin_password: "YetAnotherPass789!"</code></pre>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"># Allow HTTPS from your corporate network only
 sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" \
-    source address="17.0.0.0/8" port protocol="tcp" port="443" accept'
+    source address="192.168.0.0/16" port protocol="tcp" port="443" accept'
 
 # Reload firewall
 sudo firewall-cmd --reload</code></pre>
