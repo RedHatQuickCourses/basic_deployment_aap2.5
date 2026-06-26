@@ -2,7 +2,7 @@
 
 == How the Platform Works
 
-Let's walk through what happens when you run an automation job:
+The following steps describe what happens when an automation job is submitted:
 
 **Step 1: User Authentication**
  
@@ -34,12 +34,15 @@ Let's walk through what happens when you run an automation job:
 - Events from the job can trigger EDA rules
 - EDA can automatically launch additional jobs based on conditions
 
-> **Real-world example**: Imagine you're deploying a web application. The controller runs the playbook, execution nodes do the actual work on your servers, and if the deployment fails, EDA can automatically trigger a rollback job!
+[NOTE]
+====
+For example, when deploying a web application, the Controller runs the playbook, execution nodes perform the work on target servers, and if the deployment fails, EDA can automatically trigger a rollback job.
+====
 
 
-== Metrics Service Architecture (New in 2.7)
+== Metrics Service Architecture
 
-AAP 2.7 introduces a **Metrics Service** that collects anonymized usage data. Understanding this helps with capacity planning:
+AAP 2.7 includes a **Metrics Service** that collects anonymized usage data. Understanding this helps with capacity planning:
 
 *What it collects*:
 
@@ -62,7 +65,10 @@ AAP 2.7 introduces a **Metrics Service** that collects anonymized usage data. Un
 - Variable names and values
 - Workflow template names
 
-> **Privacy Note**: Only aggregated statistics and counts are transmitted. No personal data leaves your environment!
+[NOTE]
+====
+Only aggregated statistics and counts are transmitted. No personal data leaves your environment.
+====
 
 .Architecture Components:
 |===
@@ -81,6 +87,9 @@ AAP 2.7 introduces a **Metrics Service** that collects anonymized usage data. Un
 4. Anonymized metrics are stored in the metrics database
 5. Daily at 3:00 AM, data is anonymized and transmitted to Red Hat via Segment
 
-> **PRO TIP**: You can disable metrics collection by setting feature flags during installation!
+[TIP]
+====
+You can disable metrics collection by setting feature flags during installation.
+====
 
 

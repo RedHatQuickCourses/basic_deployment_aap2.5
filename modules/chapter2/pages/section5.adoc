@@ -1,0 +1,50 @@
+= Chapter 2 Summary
+
+This chapter covered two primary methods for deploying Ansible Automation Platform (AAP) 2.7: containerized installation on Red Hat Enterprise Linux and operator-based installation on Red Hat OpenShift.
+
+== Containerized Installation
+
+Containerized deployments use an inventory file to define components, hosts, and configuration variables. Two deployment topologies are available:
+
+* *Enterprise topology*: Each component (Automation Gateway, Controller, Hub, etc.) is installed on a dedicated system, providing better performance, redundancy, and scalability. Recommended for production environments.
+* *All-in-one (growth) topology*: All components are installed on a single system, ideal for testing, proof-of-concept, and small environments with fewer than 50 managed nodes.
+
+The `inventory-growth` file is used for all-in-one or growth deployments, while the default `inventory` file targets the enterprise topology. Installation is driven by the `ansible.containerized_installer.install` playbook.
+
+== Operator-Based Installation
+
+The AAP Operator provides cloud-native, push-button deployment on Red Hat OpenShift Container Platform. It supports the same two topology models:
+
+* *Operator growth topology*: A lighter footprint intended for organizations getting started with AAP. Suitable for single-node or small OpenShift clusters (tested with 32 GB RAM, 16 CPUs, 128 GB disk).
+* *Operator enterprise topology*: Designed for high-availability, large-scale automation across multi-node OpenShift clusters (tested with 16 GB RAM, 4 CPUs per worker node). Supports multiple instances of each component for fault tolerance.
+
+Installation is done through OperatorHub in the OpenShift console by searching for *Ansible Automation Platform*, selecting the `stable-2.7` channel, and creating an AAP instance via the operator's Custom Resource interface.
+
+== Key Takeaways
+
+[cols="1,1,1", options="header"]
+|===
+| Attribute | Containerized (RHEL) | Operator (OpenShift)
+
+| Platform
+| Red Hat Enterprise Linux
+| Red Hat OpenShift
+
+| Deployment tool
+| Ansible installer playbook
+| OpenShift OperatorHub
+
+| Configuration
+| Inventory file
+| Custom Resource (CR)
+
+| Topology options
+| Enterprise / All-in-one
+| Enterprise / Growth
+
+| Best for
+| RHEL-based infrastructure
+| Cloud-native, OCP environments
+|===
+
+Both methods require a valid Red Hat subscription and support subscription attachment through the AAP web interface after installation. Validate your deployment by syncing the built-in *Demo Project* and confirming job execution.

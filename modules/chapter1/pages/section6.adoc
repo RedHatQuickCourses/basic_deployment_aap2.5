@@ -32,5 +32,8 @@ Maintain clear and up-to-date documentation for both the platform and the automa
 
 Automation documentation should describe the purpose of each playbook, required variables, dependencies, expected outcomes, and rollback procedures. Well-maintained documentation reduces troubleshooting time and improves operational efficiency during incidents.
 
-> TIP: Investing time in documentation today can save significant effort during outages, upgrades, and troubleshooting activities.
+[TIP]
+====
+Investing time in documentation today can save significant effort during outages, upgrades, and troubleshooting activities.
+====
 

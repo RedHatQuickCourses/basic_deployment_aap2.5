@@ -32,11 +32,11 @@ The Containerized installation offers two types of deployment topologies from wh
 +
 image::4.1.png[]
 +
-*Enterprise topology* is appropriate for infrastructure that needs: 
+*Enterprise topology* is appropriate for infrastructure that needs:
 
-.. Lightweight deployment, smaller footprints.
-.. Suitable for scaling or adding mesh.
-.. Designed for deployment with redundancy/HA or higher computing for big volumes of automation.
+.. Higher computing capacity for large volumes of automation.
+.. Redundancy and high availability across platform components.
+.. Scalable automation mesh for managing distributed environments.
 +
 The benefits of using this topology: 
 
@@ -44,13 +44,16 @@ The benefits of using this topology:
  .. Isolated from other applications and are more secure.
  .. Simplified upgrades
 
-> **Important**: For production, Red Hat recommends enterprise topology with external database for performance and availability.
+[IMPORTANT]
+====
+For production, Red Hat recommends enterprise topology with an external database for performance and availability.
+====
 
 . *All-in-one pattern*: In this, we will be installing all the components in a single system to create a testing environment or POC to understand the working. In this, we are going to do *All-in-one* pattern deployment.
 +
 image::4.2.png[]
 +
-The above will be deployed on a single system itself where 8433 will be the port for the *Unified UI* to be accessed. 
+The above will be deployed on a single system itself where 8443 will be the port for the *Unified UI* to be accessed.
 
 +
 *All-in-one pattern* is suitable for infrastructure according to the below needs: 
@@ -62,7 +65,7 @@ The above will be deployed on a single system itself where 8433 will be the port
 .. Suitable for small test environments.
 
 +
-The benefits of using this topology: 
+. The benefits of using this topology: 
 
 - Protected from the underlying OS changes and system dependencies. 
 - All services run on one server
@@ -71,7 +74,7 @@ The benefits of using this topology:
 - Good for: Development, testing, small production (<50 managed nodes)
 
 +
-Resource allocation example: 
+. Resource allocation example: 
 
 - 16 GB RAM minimum (32 GB recommended)
 - 4 CPU cores minimum (8 recommended)

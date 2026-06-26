@@ -1,7 +1,8 @@
 = Security Best Practices
 
-let's discuss how to use it effectively and securely. However, the best practices and should be used as a reference point. Because operational requirements vary by organization, you should tailor and design a schedule that aligns with your specific infrastructure and business needs.
-== Credential Management
+This section covers how to use AAP effectively and securely. These best practices should be used as a reference point. Because operational requirements vary by organization, you should tailor and design a schedule that aligns with your specific infrastructure and business needs.
+
+== 1. Credential Management
 
 Proper credential management is essential for securing your Ansible Automation Platform environment. Protect sensitive information, follow password management best practices, and grant only the minimum permissions required for users and services.
 
@@ -42,7 +43,7 @@ ansible-playbook -i inventory -e @vault.yml --ask-vault-pass \
     ansible.containerized_installer.install
 ```
 
-== Network Security
+== 2. Network Security
 
 A properly configured firewall helps protect the Ansible Automation Platform by limiting access to only the services and users that require it. Review network access regularly and ensure that only necessary communication paths are allowed.
 
@@ -57,7 +58,7 @@ A properly configured firewall helps protect the Ansible Automation Platform by 
 ```bash
 # Allow HTTPS from your corporate network only
 sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" \
-    source address="17.0.0.0/8" port protocol="tcp" port="443" accept'
+    source address="192.168.0.0/16" port protocol="tcp" port="443" accept'
 
 # Reload firewall
 sudo firewall-cmd --reload
@@ -81,7 +82,7 @@ Protect the PostgreSQL databases that support the platform by implementing stron
 - Enable SSL for database connections, especially when using remote databases.
 - Perform regular encrypted backups to support recovery and data protection.
 
-==  3. Access Control
+== 3. Access Control
 
 **Role-Based Access Control (RBAC)**:
 - Create teams for different groups (developers, operators, auditors)

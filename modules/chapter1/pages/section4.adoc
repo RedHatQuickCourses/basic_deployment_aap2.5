@@ -1,8 +1,8 @@
 = Deployment Best Practices
 
-The best practices and should be used as a reference point. Because operational requirements vary by organization, you should tailor and design a schedule that aligns with your specific infrastructure and business needs.
+These best practices should be used as a reference point. Because operational requirements vary by organization, you should tailor and design a schedule that aligns with your specific infrastructure and business needs.
 
-==  1. Capacity Planning
+== 1. Capacity Planning
 
 Size appropriately based on your environment needs. Consider the following guidelines:
 
@@ -37,7 +37,10 @@ For production environments requiring HA:
 - 2x Automation Hub nodes (with NFS shared storage)
 - 3+ Execution nodes
 
-> **Pro Tip**: For true HA, ensure no single point of failure exists in your design!
+[TIP]
+====
+For true HA, ensure no single point of failure exists in your design.
+====
 
 == 3. Backup and Disaster Recovery
 

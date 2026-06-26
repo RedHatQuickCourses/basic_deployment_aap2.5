@@ -3,16 +3,10 @@
 == Instructions to Launch Your Lab on the Red Hat Demo Platform (RHDP)
 
 . **Log in** to the xref:#RHDP-Portal-Links[RHDP portal]
-. **Search** for the catalog entry: **Product Enablement Containerized AAP 2.5** for lab 1. 
+. **Search** for the catalog entry: **Product Enablement: AAP 2.7 Fundamentals and Deployment**.
 + 
 image::1.png[]
 
-. **Search** for the catalog entry: **Product Enablement AAP Operator Deployment lab** for lab 2.
-+
-image::2.png[]
-
-. **Click** on the catalog entry in the search results.
-. On the catalog page, **click** the **Order** button.
 . **Fill out** the required details in the order form.
 + 
 image::form.png[]
@@ -21,7 +15,7 @@ image::form.png[]
 . **Click** the **Order** button to place your lab order.
 
 === Important Notes:
-- This lab may take approximately **10 minutes** to become ready for **Product Enablement Containerized AAP 2.5**  and **50 minutes** for **Product Enablement AAP Operator Deployment lab** .
+- This lab may take approximately **10 minutes** to become ready for **Product Enablement: AAP 2.7 Fundamentals and Deployment**.
 - You will receive an **email with access details** once your lab environment is ready.
 - You can also **retrieve lab access** directly from the RHDP portal.
 
@@ -31,6 +25,5 @@ image::form.png[]
 
 [[RHDP-Portal-Links]]
 === RHDP Portal Links
-- RedHat associates: Access to the labs https://catalog.demo.redhat.com/catalog?search=Product+Enablement+Containerized+AAP+2.5[Product Enablement Containerized AAP 2.5,window=_blank] and https://catalog.demo.redhat.com/catalog?search=Product+Enablement+AAP+Operator+Deployment+lab[Product Enablement AAP Operator Deployment lab,window=_balnk]
-- RedHat partners: https://catalog.partner.demo.redhat.com/catalog?search=Product+Enablement+Containerized+AAP+2.5&item=babylon-catalog-prod%2Fpartner.containerized-aap-25.prod[Product Enablement Containerized AAP 2.5,window=_blank] and https://catalog.partner.demo.redhat.com/catalog?search=Product+Enablement+AAP+Operator+Deployment+lab[Product Enablement AAP Operator Deployment lab,window=_balnk]
-
+- Red Hat associates: Access to the labs https://catalog.demo.redhat.com/catalog?search=Product+Enablement+Containerized+AAP+2.5[Product Enablement: AAP 2.7 Fundamentals and Deployment,window=_blank].
+- Red Hat partners: https://catalog.partner.demo.redhat.com/catalog?search=Product+Enablement+Containerized+AAP+2.5&item=babylon-catalog-prod%2Fpartner.containerized-aap-25.prod[Product Enablement: AAP 2.7 Fundamentals and Deployment,window=_blank]. 

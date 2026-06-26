@@ -1,6 +1,6 @@
 = On-premise Installation 
 
-There are 2 different ways by which you can do the installation to your local infrastructure i.e. RPM, Containerized, and Operator. In this, we are going to learn about the Future of Deployment method which is known as Containerized installation. The RPM installation is more or less the same and as the RPM will be getting deprecated in the future our focus will be on understanding the other 2 Containerized and Operator-based deployment. 
+There are three ways to install AAP on your local infrastructure: RPM, Containerized, and Operator. In this, we are going to learn about the Future of Deployment method which is known as Containerized installation. The RPM installation is more or less the same and as the RPM will be getting deprecated in the future our focus will be on understanding the other 2 Containerized and Operator-based deployment. 
 
 System Requirements
 

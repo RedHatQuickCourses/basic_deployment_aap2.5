@@ -60,4 +60,7 @@ AAP 2.7 offers two deployment methods. Understanding when to use each is importa
 | Backup/restore | Manual playbook | Operator-managed CR
 |===
 
-> **Pro Tip**: Choose based on your existing infrastructure. If you're already using RHEL, containerized installer integrates smoothly. If you're on OpenShift, the operator simplifies operations significantly.
+[TIP]
+====
+Choose based on your existing infrastructure. If you are already using RHEL, the containerized installer integrates smoothly. If you are on OpenShift, the Operator simplifies operations significantly.
+====

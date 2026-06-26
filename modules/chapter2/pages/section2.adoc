@@ -1,77 +1,147 @@
 = Containerized Installation LAB 
 
-We will be using *Product Enablement Containerized AAP 2.5* LAB for this deployment. Please be aware that setting up a RHEL 9 system in this lab will take about ten minutes. Following that, you can proceed with the installation procedures:
+The following steps demonstrate how to install all AAP 2.7 components on a single system using the all-in-one pattern:
 
-The below video demonstrates the step to step guide to do the installation of all components on a single system itself: 
+- We are going to follow an All-in-one pattern approach for the setup.
 
-video::container_aap_lab.mp4[align="left",width=800,height=500]
+image::4.2.png[]
 
-all the above steps followed in the video are shared below: 
+. *OpenShift Console Access:*
 
-. We are going to follow an All-in-one pattern approach for the setup. 
+.. Navigate to *Virtualization* → *VirtualMachines*
 +
-image::5.1.png[]
+image::4.3.png[]
+.. Select namespace: `aap-lab`
+.. Click on `aap-lab-rhel10`
++
+image::4.4.png[]
+.. Click on the *Open Web Console* button. 
++
+image::4.5.png[]
+.. Use the *Serial* tab for terminal access.
++
+image::4.6.png[]
 
-. Once the lab is deployed and you are accessing the system via *ssh* terminal make sure to run everything as a normal user only and use the sudo command to perform any root-level operations. 
+. Copy the username and password from the task bar and use CTRL+SHIFT+V to paste the credentials in the terminal. to access the system.
++
+image::4.7.png[]
++
+image::4.8.png[]
+
+. Register the system with Red Hat Subscription Management and attach the subscription to the system.
++
+[source,bash,role=execute]
+----
+sudo subscription-manager register
+----
++
+[source,bash,role=execute]
+----
+username: <YOUR-RHN_LOGIN>
+password: <YOUR-RHN_PASSWORD>
+----
++
+image::4.9.png[]
 
 . Install the required and useful utilities:
 +
 [source,bash,role=execute]
 ----
- $ sudo dnf install -y wget git-core rsync vim ansible-core
+sudo dnf install -y wget git-core rsync vim ansible-core
 ----
 
-. Go to the https://access.redhat.com/downloads/content/480/ver=2.5/rhel---9/2.5/x86_64/product-software[Installer,window=_blank] link and Get the installer link for *Ansible Automation Platform 2.5 Containerized Setup Bundle*.
+. Go to the https://access.redhat.com/downloads/content/480/ver=2.7/rhel---10/2.7/x86_64/product-software[Installer,window=_blank] link and Get the installer link for *Ansible Automation Platform 2.7 Containerized Setup Bundle* for RHEL 10.
 +
-Note: Please follow steps 4 and 5 one after another in order to avoid the link expiration error, as the copied URL has an expiration time. Reload the website, repeat step 4, and copy the link if you are having trouble.  
+Note: Please follow steps 5 and 6 one after another in order to avoid the link expiration error, as the copied URL has an expiration time. Reload the website, repeat step 5, and copy the link if you are having trouble.  
++
+image::4.10.png[]
++
+image::4.11.png[]
 
 . Download the installer file to the VM: 
 + 
 [source,bash,role=execute]
 ---- 
-$ wget -O aap.tar.gz "<paste-link-here taken from step 4>"
+wget -O aap.tar.gz "<paste-link-here taken from step 5>"
 ----
++
+image::4.12.png[]
 
 . Extract the *aap.tar.gz* file using the following command:
 + 
 [source,bash,role=execute]
 ---- 
-$ tar -xvf aap.tar.gz
+tar -xvf aap.tar.gz
 ----
 
 . Get the hostname from the system and copy it.
 + 
 [source,bash,role=execute]
 ---- 
-$ hostname
+hostname -f
 ----
 
+[IMPORTANT]
+====
+*Password security guidelines*:
+
+* Use strong, unique passwords for each component.
+* Do NOT use special characters like `,`, `"`, or `@` in passwords — they can break the installer.
+* Supported special characters: `!`, `#`, `$`, `%`, and `&`.
+* Store the inventory file securely after installation — it contains sensitive credentials.
+====
+
 . Using the *cd* command, enter the extracted folder. Then, use the *vim* command, open the *inventory-growth* file and make the following changes, wherever they appear throughout the entire *inventory-growth* file:
-+ 
++
 [source,bash,role=execute]
----- 
-$ cd <extracted-folder-from-step-6>
-$ vim inventory-growth
+----
+ cd <extracted-folder-from-step-6>
+ vim inventory-growth
 aap.example.org → < paste system hostname>
 <set your own> → redhat
 
-<set your own> ← This value can be customized as per your need but remember to use the same while doing the login after the deployment.  
+<set your own> ← This value can be customized as per your need but remember to use the same while doing the login after the deployment.
 ----
 +
-Note: Please click this link to learn how to use https://www.geeksforgeeks.org/basic-vim-commands/[Vim basic operations,window=_blank].
+To replace all occurrences at once, use vim's global substitute command instead of editing each line manually. While in vim, type the following in *command mode* (press *Esc* first):
++
+[source,bash,role=execute]
+----
+# Replace every occurrence of aap.example.org with your actual hostname
+:%s/aap.example.org/<your-hostname>/g
+
+# Replace every occurrence of <set your own> with your chosen password
+:%s/<set your own>/redhat/g
+----
++
+[NOTE]
+====
+* `:%s` — runs the substitution across *all lines* in the file.
+* `/g` — replaces *every match on a line*, not just the first.
+* After running both commands, type *`:wq`* and press *Enter* to save and quit.
+* If you chose a different password instead of `redhat`, use that value in the second command. Use the same password when logging in after deployment.
+====
++
+[NOTE]
+====
+Click this link to learn how to use https://www.geeksforgeeks.org/basic-vim-commands/[Vim basic operations, window=_blank].
+====
 
 . Once the inventory file is ready follow the below steps to do the installation:
 +
 [source,bash,role=execute]
 ----
-$ ansible-playbook -i inventory-growth ansible.containerized_installer.install
+ansible-playbook -i inventory-growth ansible.containerized_installer.install
 ----
 
-. Simply use the hostname from the lab deployment login page and try to access the URL from the browser on the port *443*.
+. Simply go to the RHDP login page from the lab deployment and access the AAP web interface. 
 
-. Use the user *admin* and the *password* set during the time of installation. In the above video I set it to *redhat*. 
+. Use the user *admin* and the *password* set during the time of installation. The example above uses `redhat` as the password.
 
- Note: Try to use stronger password while doing the enterprise deployment 
+[NOTE]
+====
+Use a stronger password for enterprise deployments.
+====
 
 . Provide the *Red Hat login ID* to get the subscription for attaching it to the AAP and *60-day subscription to Red Hat Ansible® Automation Platform* or *Red Hat Developer Subscription for Individuals* subscription can be used for this lab.
 

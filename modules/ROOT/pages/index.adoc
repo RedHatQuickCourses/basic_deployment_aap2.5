@@ -11,20 +11,23 @@ Duration: 60 minutes
 
 On completing this course, you should be able to:
 
-- Understanding of the Ansible Automation Platform's (AAP) features, architecture, and components.
-- Discover how to evaluate the infrastructure needs and set up the environment for the deployment of AAP.
-- Know the benefits of using the right Topology for the deployment. 
+- Describe the components, architecture, and features of Red Hat Ansible Automation Platform 2.7.
+- Evaluate infrastructure requirements and select the appropriate deployment topology.
+- Deploy AAP 2.7 using the containerized installer on Red Hat Enterprise Linux.
+- Deploy AAP 2.7 using the Operator on Red Hat OpenShift Container Platform.
+- Apply security and operational best practices to an AAP 2.7 deployment.
 
 == Contributors
 
 The PTL team acknowledges the valuable contributions of the following Red Hat associates:
 
  - Amrinder Singh (Content Architect)
- - Rutuja Deshmukh (Editor)
  - Anna Swicegood (Learning Product Manager)
 
 == Prerequisites
 
-This course assumes that you have the following prior experience:
+Before proceeding, you should be familiar with:
 
-- Foundational knowledge of Linux, Containers, Ansible, and OpenShift. 
+- Basic Linux system administration on RHEL
+- Fundamental Ansible concepts (playbooks, inventories, and roles)
+- Networking basics (ports, firewalls, TLS)

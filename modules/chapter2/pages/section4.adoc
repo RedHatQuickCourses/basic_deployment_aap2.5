@@ -2,33 +2,65 @@
 
 We will be using *Product Enablement AAP Operator Deployment lab* LAB for this deployment. Please be aware that setting up a Operator Lab will take about fifty minutes. Following that, you can proceed with the installation procedures:
 
-The following video will provide the step-by-step guide for installing the Ansible Automation Platform 2.5 operator:
+. Log in to the Red Hat OpenShift Container Platform using your credentials form the RHDP login page.
 
-video::operator_aap.mp4[align="center",width=800,height=500]
+. Navigate to Ecosystem Software Catalog and search for *Ansible Automation Platform*.
++
+image::6.3.png[]
 
-All the followed steps in the video are shared below:
-
-. Log in to the Red Hat OpenShift Container Platform.
-. Navigate to Operators OperatorHub.
 . Search for *Ansible Automation Platform* and click *Install*.
-. Select a *stable-2.5*.
++
+image::6.4.png[]
+
+. Select a *stable-2.7*.
++
+image::6.5.png[]
+
 . Select namespace as default which will be *aap*.
++
+image::6.6.png[]
+
 . Click *Install*.
++
+image::6.7.png[]
+
 . Go to *Installed Operators* and there you will see *Ansible Automation Platform* operator installed click on it. 
++
+image::6.8.png[]
 
 . Select project as *aap* if it's not aap. 
++
+image::6.9.png[]
 
 . There scroll to the option *Ansible Automation Platform* and click on *Create instance* which will deploy all the components of *AAP*.
++
+image::6.10.png[]
 
 . Provide the *Name* on which will be used to create the resources for that *AAP* like network routes,secrets. 
++
+image::6.11.png[]
 
  Note: There are many other options that we can customize according to the requirement but in this we will be taking care of very basic deployment. 
 
-. Click on *Create* it will deploy the resournces which will take around 20 minutes. 
+. Click on *Create* it will deploy the resources which will take around 20 minutes. 
++
+image::6.12.png[]
 
-. On openshift dashboard *Click on* Networking and then routes and click on the *ansible* route or the *Name* given in Step 10 above.
+. On openshift dashboard *Click on* Networking and then routes and click on the *ansible* route or the *Name* given in Step 11 above.
++
+image::6.13.png[]
++
+image::6.14.png[]
 
 . On openshift dashboard go to *Workloads* and then *Secrets* and search for *admin* . click on it and copy the *password*. 
++
+image::6.15.png[]
++
+image::6.16.png[]
++
+image::6.17.png[]
++
+image::6.18.png[]
 
 . Provide the *Red Hat login ID* to get the subscription for attaching it to the AAP and *60-day subscription to Red Hat Ansible® Automation Platform* or *Red Hat Developer Subscription for Individuals* subscription can be used for this lab.  
 
