@@ -65,3 +65,6 @@ image::6.18.png[]
 . Provide the *Red Hat login ID* to get the subscription for attaching it to the AAP and *60-day subscription to Red Hat Ansible® Automation Platform* or *Red Hat Developer Subscription for Individuals* subscription can be used for this lab.  
 
 . Submit it and run the *Project sync* of the *Demo project* to confirm the job is getting executed.
+
+. You can access the AAP web interface using the *admin* user and the *password* copied from the secret in step 15. and use the link given in the RHDP login page: *After AAP Installation* to access the AAP web interface. 
+
