@@ -2,6 +2,8 @@
 
 AAP 2.7 offers two deployment methods. Understanding when to use each is important:
 
+image::3.png[]
+
 == Containerized Installer (RHEL-based)
 
 **What it is**: Ansible role that deploys AAP as Podman containers on RHEL hosts

@@ -1,4 +1,4 @@
-= Chapter 2 Summary
+= Summary
 
 This chapter covered two primary methods for deploying Ansible Automation Platform (AAP) 2.7: containerized installation on Red Hat Enterprise Linux and operator-based installation on Red Hat OpenShift.
 
@@ -19,32 +19,5 @@ The AAP Operator provides cloud-native, push-button deployment on Red Hat OpenSh
 * *Operator enterprise topology*: Designed for high-availability, large-scale automation across multi-node OpenShift clusters (tested with 16 GB RAM, 4 CPUs per worker node). Supports multiple instances of each component for fault tolerance.
 
 Installation is done through OperatorHub in the OpenShift console by searching for *Ansible Automation Platform*, selecting the `stable-2.7` channel, and creating an AAP instance via the operator's Custom Resource interface.
-
-== Key Takeaways
-
-[cols="1,1,1", options="header"]
-|===
-| Attribute | Containerized (RHEL) | Operator (OpenShift)
-
-| Platform
-| Red Hat Enterprise Linux
-| Red Hat OpenShift
-
-| Deployment tool
-| Ansible installer playbook
-| OpenShift OperatorHub
-
-| Configuration
-| Inventory file
-| Custom Resource (CR)
-
-| Topology options
-| Enterprise / All-in-one
-| Enterprise / Growth
-
-| Best for
-| RHEL-based infrastructure
-| Cloud-native, OCP environments
-|===
 
 Both methods require a valid Red Hat subscription and support subscription attachment through the AAP web interface after installation. Validate your deployment by syncing the built-in *Demo Project* and confirming job execution.

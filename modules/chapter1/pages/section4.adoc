@@ -6,13 +6,37 @@ These best practices should be used as a reference point. Because operational re
 
 Size appropriately based on your environment needs. Consider the following guidelines:
 
+[NOTE]
+====
+*All-in-one topology — minimum per node:*
+
+*Per virtual machine:*
+
+* RAM: 16 GB minimum
+* CPUs: 4 minimum
+* Disk: 60 GB total (15 GB installation directory, 1 GB `/var/tmp` for online installs)
+* Disk IOPS: 3,000
+
+*System configuration:*
+
+* OS: Red Hat Enterprise Linux 9.4 or later, or RHEL 10 or later
+* Database: PostgreSQL 15 (managed automatically)
+* Subscriptions: Valid Red Hat AAP subscription and RHEL subscription required
+
+*Prerequisites:*
+
+* Dedicated non-root user with `sudo` privileges on the RHEL host
+* SSH public key authentication configured for remote installs
+* Required network ports open in the firewall
+====
+
 |===
-| Environment Type | Managed Nodes | Topology | Resources per Node 
-| Development | <10 | All-in-one | 8 GB RAM, 2 CPU 
-| Test/QA | 10-50 | All-in-one | 16 GB RAM, 4 CPU 
-| Small Production | 50-250 | All-in-one or Small Enterprise | 16-32 GB RAM, 4-8 CPU 
-| Medium Production | 250-1000 | Enterprise | 32+ GB RAM, 8+ CPU 
-| Large Production | 1000+ | Enterprise with execution nodes | 64+ GB RAM, 16+ CPU 
+| Environment Type | Managed Nodes | Topology | Resources per Node
+| Development | <10 | All-in-one | 8 GB RAM, 2 CPU
+| Test/QA | 10-50 | All-in-one | 16 GB RAM, 4 CPU
+| Small Production | 50-250 | All-in-one or Small Enterprise | 16-32 GB RAM, 4-8 CPU
+| Medium Production | 250-1000 | Enterprise | 32+ GB RAM, 8+ CPU
+| Large Production | 1000+ | Enterprise with execution nodes | 64+ GB RAM, 16+ CPU
 |===
 
 

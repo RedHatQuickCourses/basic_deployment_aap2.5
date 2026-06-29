@@ -4,6 +4,8 @@
 
 The following steps describe what happens when an automation job is submitted:
 
+image::arch.png[]
+
 **Step 1: User Authentication**
  
 - User logs in through the Platform Gateway (HTTPS port 443)

@@ -29,6 +29,8 @@ Red Hat Ansible Automation Platform uses several ports to communicate with its s
 | Health check endpoint at /health/ via nginx
 |===
 
+Let also look into the Component Ports and Protocols used by the Ansible Automation Platform. The following table lists the default ports and protocols used by each component of the Ansible Automation Platform.
+
 .Default Component Ports
 [options="header"]
 |===
