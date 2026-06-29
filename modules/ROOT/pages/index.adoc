@@ -1,4 +1,4 @@
-= Basic Deployment of Ansible Automation Platform 2.5
+= AAP 2.7 Fundamentals and Deployment
 :navtitle: Home
 
 == Introduction
