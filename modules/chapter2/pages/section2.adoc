@@ -80,7 +80,7 @@ tar -xvf aap.tar.gz
 ---- 
 hostname -f
 ----
-
++
 [IMPORTANT]
 ====
 *Password security guidelines*:
@@ -137,12 +137,20 @@ ansible-playbook -i inventory-growth ansible.containerized_installer.install
 . Simply go to the RHDP login page from the lab deployment and access the AAP web interface. 
 
 . Use the user *admin* and the *password* set during the time of installation. The example above uses `redhat` as the password.
-
++
 [NOTE]
 ====
 Use a stronger password for enterprise deployments.
 ====
 
-. Provide the *Red Hat login ID* to get the subscription for attaching it to the AAP and *60-day subscription to Red Hat Ansible® Automation Platform* or *Red Hat Developer Subscription for Individuals* subscription can be used for this lab.
+. Select the Username and Password fields and provide the *Red Hat login ID* to get the subscription for attaching it to the AAP and *60-day subscription to Red Hat Ansible® Automation Platform* or *Red Hat Developer Subscription for Individuals* subscription can be used for this lab.
 
-. After *Login* run the *Project sync* for the *Demo project* to confirm the job is getting executed.
+. You can access the AAP web interface using the *admin* user and the *password* set according to the Step 9. and use the link given in the RHDP login page: *After AAP Installation* to access the AAP web interface. 
++
+image::4.13.png[]
++
+image::4.14.png[]
+
+. After *Login* run the *Project sync* from the *Projects* section for the *Demo project* to confirm the job is getting executed.
+
+Congratulations! You have successfully deployed the Ansible Automation Platform using the Containerized method. You can now access the AAP web interface using the *admin* user and the *password* set during installation.
