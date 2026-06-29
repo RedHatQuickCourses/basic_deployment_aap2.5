@@ -300,9 +300,6 @@ password: &lt;YOUR-RHN_PASSWORD&gt;</code></pre>
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">hostname -f</code></pre>
 </div>
 </div>
-</li>
-</ol>
-</div>
 <div class="admonitionblock important">
 <table>
 <tr>
@@ -333,8 +330,7 @@ password: &lt;YOUR-RHN_PASSWORD&gt;</code></pre>
 </tr>
 </table>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+</li>
 <li>
 <p>Using the <strong>cd</strong> command, enter the extracted folder. Then, use the <strong>vim</strong> command, open the <strong>inventory-growth</strong> file and make the following changes, wherever they appear throughout the entire <strong>inventory-growth</strong> file:</p>
 <div class="listingblock execute">
@@ -414,9 +410,6 @@ aap.example.org → &lt; paste system hostname&gt;
 </li>
 <li>
 <p>Use the user <strong>admin</strong> and the <strong>password</strong> set during the time of installation. The example above uses <code>redhat</code> as the password.</p>
-</li>
-</ol>
-</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -431,15 +424,30 @@ aap.example.org → &lt; paste system hostname&gt;
 </tr>
 </table>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Provide the <strong>Red Hat login ID</strong> to get the subscription for attaching it to the AAP and <strong>60-day subscription to Red Hat Ansible® Automation Platform</strong> or <strong>Red Hat Developer Subscription for Individuals</strong> subscription can be used for this lab.</p>
 </li>
 <li>
-<p>After <strong>Login</strong> run the <strong>Project sync</strong> for the <strong>Demo project</strong> to confirm the job is getting executed.</p>
+<p>Select the Username and Password fields and provide the <strong>Red Hat login ID</strong> to get the subscription for attaching it to the AAP and <strong>60-day subscription to Red Hat Ansible® Automation Platform</strong> or <strong>Red Hat Developer Subscription for Individuals</strong> subscription can be used for this lab.</p>
+</li>
+<li>
+<p>You can access the AAP web interface using the <strong>admin</strong> user and the <strong>password</strong> set according to the Step 9. and use the link given in the RHDP login page: <strong>After AAP Installation</strong> to access the AAP web interface.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/4.13.png" alt="4.13">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/4.14.png" alt="4.14">
+</div>
+</div>
+</li>
+<li>
+<p>After <strong>Login</strong> run the <strong>Project sync</strong> from the <strong>Projects</strong> section for the <strong>Demo project</strong> to confirm the job is getting executed.</p>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<p>Congratulations! You have successfully deployed the Ansible Automation Platform using the Containerized method. You can now access the AAP web interface using the <strong>admin</strong> user and the <strong>password</strong> set during installation.</p>
 </div>
 <nav class="pagination">
   <span class="prev"><a href="section1.html">Containerized Installation</a></span>
